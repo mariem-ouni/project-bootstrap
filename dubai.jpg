@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta name="theme-color" content="#95c391"/>
+
+
+      
+        <!-- InMobi Choice. Consent Manager Tag v3.0 (for TCF 2.2) -->
+    <script type="text/javascript" async>
+        (function() {
+            var host = 'generationvoyage.fr';
+            var element = document.createElement('script');
+            var firstScript = document.getElementsByTagName('script')[0];
+            var url = 'https://cmp.inmobi.com'
+                .concat('/choice/', 'CY9fQZg9c-rvQ', '/', host, '/choice.js?tag_version=V3');
+            var uspTries = 0;
+            var uspTriesLimit = 3;
+            element.async = true;
+            element.type = 'text/javascript';
+            element.src = url;
+
+            firstScript.parentNode.insertBefore(element, firstScript);
+
+            function makeStub() {
+                var TCF_LOCATOR_NAME = '__tcfapiLocator';
+                var queue = [];
+                var win = window;
+                var cmpFrame;
+
+                function addFrame() {
+                    var doc = win.document;
+                    var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+                    if (!otherCMP) {
+                        if (doc.body) {
+                            var iframe = doc.createElement('iframe');
+
+                            iframe.style.cssText = 'display:none';
+                            iframe.name = TCF_LOCATOR_NAME;
+                            doc.body.appendChild(iframe);
+                        } else {
+                            setTimeout(addFrame, 5);
+                        }
+                    }
+                    return !otherCMP;
+                }
+
+                function tcfAPIHandler() {
+                    var gdprApplies;
+                    var args = arguments;
+
+                    if (!args.length) {
+                        return queue;
+                    } else if (args[0] === 'setGdprApplies') {
+                        if (
+                            args.length > 3 &&
+                            args[2] === 2 &&
+                            typeof args[3] === 'boolean'
+                        ) {
+                            gdprApplies = args[3];
+                            if (typeof args[2] === 'function') {
+                                args[2]('set', true);
+                            }
+                        }
+                    } else if (args[0] === 'ping') {
+                        var retr = {
+                            gdprApplies: gdprApplies,
+                            cmpLoaded: false,
+                            cmpStatus: 'stub'
+                        };
+
+                        if (typeof args[2] === 'function') {
+                            args[2](retr);
+                        }
+                    } else {
+                        if(args[0] === 'init' && typeof args[3] === 'object') {
+                            args[3] = Object.assign(args[3], { tag_version: 'V3' });
+                        }
+                        queue.push(args);
+                    }
+                }
+
+                function postMessageEventHandler(event) {
+                    var msgIsString = typeof event.data === 'string';
+                    var json = {};
+
+                    try {
+                        if (msgIsString) {
+                            json = JSON.parse(event.data);
+                        } else {
+                            json = event.data;
+                        }
+                    } catch (ignore) {}
+
+                    var payload = json.__tcfapiCall;
+
+                    if (payload) {
+                        window.__tcfapi(
+                            payload.command,
+                            payload.version,
+                            function(retValue, success) {
+                                var returnMsg = {
+                                    __tcfapiReturn: {
+                                        returnValue: retValue,
+                                        success: success,
+                                        callId: payload.callId
+                                    }
+                                };
+                                if (msgIsString) {
+                                    returnMsg = JSON.stringify(returnMsg);
+                                }
+                                if (event && event.source && event.source.postMessage) {
+                                    event.source.postMessage(returnMsg, '*');
+                                }
+                            },
+                            payload.parameter
+                        );
+                    }
+                }
+
+                while (win) {
+                    try {
+                        if (win.frames[TCF_LOCATOR_NAME]) {
+                            cmpFrame = win;
+                            break;
+                        }
+                    } catch (ignore) {}
+
+                    if (win === window.top) {
+                        break;
+                    }
+                    win = win.parent;
+                }
+                if (!cmpFrame) {
+                    addFrame();
+                    win.__tcfapi = tcfAPIHandler;
+                    win.addEventListener('message', postMessageEventHandler, false);
+                }
+            };
+
+            makeStub();
+
+            var uspStubFunction = function() {
+                var arg = arguments;
+                if (typeof window.__uspapi !== uspStubFunction) {
+                    setTimeout(function() {
+                        if (typeof window.__uspapi !== 'undefined') {
+                            window.__uspapi.apply(window.__uspapi, arg);
+                        }
+                    }, 500);
+                }
+            };
+
+            var checkIfUspIsReady = function() {
+                uspTries++;
+                if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+                    console.warn('USP is not accessible');
+                } else {
+                    clearInterval(uspInterval);
+                }
+            };
+
+            if (typeof window.__uspapi === 'undefined') {
+                window.__uspapi = uspStubFunction;
+                var uspInterval = setInterval(checkIfUspIsReady, 6000);
+            }
+        })();
+    </script>
+    <!-- End InMobi Choice. Consent Manager Tag v3.0 (for TCF 2.2) -->
+
+    <script>
+        window.dataLayer = window.dataLayer || []
+        window.dataLayer.push({
+            'category_post': '',
+            'advertisement': {
+                'env': 'production',
+                'brand': {
+                    'name': 'Generation Voyage',
+                    'abbr': 'genv',
+                    'domain': 'generationvoyage.fr',
+                    'subdomain': 'www',
+                    'isPrisma': false
+                },
+                'page': {
+                    'path': window.location.pathname,
+                    'pageType': 'Article',
+                    'pageCategory': 'monument',
+                    'title': 'Les 6 réalisations d&rsquo;architecture futuriste à ne pas manquer à Dubaï',
+                    'keywords': ["emirats arabes unis","","dubai"],
+                }
+            },
+        });
+        window.dataLayer.push({
+            'device': 'desktop',
+            'id_post': '227909',
+            'Title': 'Les 6 réalisations d&rsquo;architecture futuriste à ne pas manquer à Dubaï',
+            'Ville_GV': 'dubai',
+            'Region_GV': '',
+            'Pays_GV': 'emirats arabes unis',
+            'Location_GV': "emirats arabes unis, , dubai",
+            'URL': 'https://generationvoyage.fr/architecture-futuriste-dubai/',
+            'cat': 'Monument',
+            'cat_inspi': '',
+            'sponsos': '',
+            'tag': '',
+            'auteur': 'Delphine Fleury',
+            'affi_label': 'Trouver les plus belles choses à voir à Dubaï',
+            'affi_url': '',
+            'custom_location': '',
+            'date_publication': '08-02-2024',
+            'date_modification': '08-02-2024',
+        });
+        window.coreAds = window.coreAds || {}
+        window.coreAds.queue = window.coreAds.queue || []
+    </script>
+    
+                <script>
+            window.dataLayer.push({
+                'isLogued': false,
+            });
+        </script>
+    
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-T8CFMX6');</script>
+    <!-- End Google Tag Manager -->
+
+    
+    <link id="favicon" rel="shortcut icon" href="https://generationvoyage.fr/icon-gv-32.png" sizes="16x16 32x32 48x48" type="image/png" />
+    <link rel="icon" href="https://generationvoyage.fr/icon-gv-256.png" sizes="256x256" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" href="https://generationvoyage.fr/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" href="https://generationvoyage.fr/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="https://generationvoyage.fr/apple-touch-icon-120x120.png" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=2" />
+    <title>Les 6 réalisations d&#039;architecture futuriste à ne pas manquer à Dubaï</title><link rel="preload" data-rocket-preload as="image" href="https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai-630x420.jpeg" imagesrcset="https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai-630x420.jpeg 630w, https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai-285x190.jpeg 285w, https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai-768x512.jpeg 768w, https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai-1536x1024.jpeg 1536w, https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai-755x503.jpeg 755w, https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai-1000x667.jpeg 1000w, https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai.jpeg 2000w" imagesizes="(max-width: 630px) 100vw, 630px" fetchpriority="high">
+
+    <link rel="alternate" type="application/rss+xml" title="Generation Voyage Flux principal" href="https://generationvoyage.fr/feed/" />
+    <meta name="p:domain_verify" content="9a3908f32a11473095db9da57551303a" />
+    <meta name="gv-version" content="v2.12.1" />
+
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v23.4 (Yoast SEO v23.4) - https://yoast.com/wordpress/plugins/seo/ -->
+	<meta name="description" content="Embarquez pour un voyage extraordinaire à la découverte de l&#039;architecture futuriste des plus grands monuments de Dubaï." />
+	<link rel="canonical" href="https://generationvoyage.fr/architecture-futuriste-dubai/" />
+	<meta property="og:locale" content="fr_FR" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Les 6 réalisations d&#039;architecture futuriste à ne pas manquer à Dubaï" />
+	<meta property="og:description" content="Embarquez pour un voyage extraordinaire au cœur de l&#039;architecture futuriste de Dubaï. Découvrez une ville où les limites de l&#039;imagination semblent" />
+	<meta property="og:url" content="https://generationvoyage.fr/architecture-futuriste-dubai/" />
+	<meta property="og:site_name" content="GenerationVoyage" />
+	<meta property="article:publisher" content="https://www.facebook.com/toolito.voyage" />
+	<meta property="article:published_time" content="2024-02-08T10:37:24+00:00" />
+	<meta property="article:modified_time" content="2024-02-08T10:37:58+00:00" />
+	<meta property="og:image" content="https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai.jpeg" />
+	<meta property="og:image:width" content="2000" />
+	<meta property="og:image:height" content="1333" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="author" content="Delphine Fleury" />
+	<meta name="twitter:label1" content="Écrit par" />
+	<meta name="twitter:data1" content="Delphine Fleury" />
+	<meta name="twitter:label2" content="Durée de lecture estimée" />
+	<meta name="twitter:data2" content="10 minutes" />
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='shortlink' href='https://generationvoyage.fr/?p=227909' />
+
+        <script>
+        var flex_TypeDevice = 'desktop';
+    </script>
+
+
+    <link rel='preload' fetchpriority='high' as='image' href='https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai-630x420.jpeg.webp' imagesizes='(max-width: 2560px) 100vw, 2560px' imagesrcset='https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai.jpeg 2000w, https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai-285x190.jpeg 285w, https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai-630x420.jpeg 630w, https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai-768x512.jpeg 768w, https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai-1536x1024.jpeg 1536w, https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai-755x503.jpeg 755w, https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai-1000x667.jpeg 1000w' type='image/webp'>    <link rel="dns-prefetch" href="//cdn.generationvoyage.fr/">
+    <link rel="preconnect" href="https://cmp.inmobi.com">
+    <link rel="preconnect" href="https://cdn.generationvoyage.fr" />
+
+
+    <link rel="stylesheet" id="critical-toolito-css" href="https://generationvoyage.fr/wp-content/themes/toolito/dist/critical.991a45067038e3a9985b429d7dbf9322.css" type="text/css" media="screen" />
+    <link rel="preload" href="https://generationvoyage.fr/css/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://generationvoyage.fr/css/fonts/Brixton/BrixtonTC-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+        <link rel="stylesheet" id="main-toolito-css" href="https://generationvoyage.fr/wp-content/themes/toolito/dist/style.36d0d5ef643c1fdaf4f9f224a8c68014.css" type="text/css" media="screen" />
+        <link rel="stylesheet" id="app-toolito-css" href="https://generationvoyage.fr/wp-content/themes/toolito/dist/app.cccae65dd91db5ddd28547231c0b8785.css" type="text/css" media="screen" />
+    
+</head>
+
+
+<body class="headervoyage single single-post single-format-standard td-blog-travel single_template_7 wpb-js-composer js-comp-ver-4.11.2 vc_responsive td-animation-stack-type0 td-full-layout td-js-loaded" x-data="app" x-init>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8CFMX6"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div id="googleTapContainer" style="display: none">
+    <div class="form-group form-group-checkbox">
+        <input name="newsletterOK" type="checkbox" value="oui" id="newsletterOK">
+        <label for="newsletterOK">Reçois aussi les coups de cœur de la communauté</label>
+    </div>
+</div>
+
+
+<div class="nav-header-container">
+    <nav class="nav-header ontop" x-data="Nav">
+        <div class="content-form">
+            <div class="logo-content td-logo-sticky">
+                <a href="https://generationvoyage.fr">
+                    <img src="https://generationvoyage.fr/wp-content/themes/toolito/img/logo_green.svg"
+                         loading="eager" data-no-lazy="1" width="170" height="45"
+                         data-retina="https://generationvoyage.fr/wp-content/themes/toolito/img/logo_green.svg"
+                         alt="Logo Generation Voyage">
+                </a>
+
+            </div>
+                            <form class="" action="/" method="get"  x-on:keyup.escape.window="closeSearch" x-on:submit="searchPost">
+                    <div class="input-group">
+                        <input x-model="dataSearch" x-on:click="searchPost" @keyup="searchPost" name='s' type="text" placeholder="Corse, Occitanie, Suède...">
+                        <button type="submit" title="Rechercher des articles">
+                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M26.3668 26.3668C26.7165 26.0171 26.7165 25.4502 26.3668 25.1005L21.3244 20.058C20.9696 19.7033 20.9407 19.1443 21.1886 18.7082C21.7228 17.7683 22.0251 16.6796 22.0251 15.5126C22.0251 11.9126 19.1126 9 15.5126 9C11.9126 9 9 11.9126 9 15.5126C9 19.1126 11.9126 22.0251 15.5126 22.0251C16.6706 22.0251 17.7608 21.7201 18.7118 21.1814C19.1456 20.9357 19.7005 20.9668 20.0531 21.3194L25.1005 26.3668C25.4502 26.7165 26.0171 26.7165 26.3668 26.3668ZM10.809 15.5126C10.809 12.9256 12.9256 10.809 15.5126 10.809C18.0995 10.809 20.2161 12.9256 20.2161 15.5126C20.2161 18.0995 18.0995 20.2161 15.5126 20.2161C12.9256 20.2161 10.809 18.0995 10.809 15.5126Z" fill="white"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="results" x-cloak x-show="show" x-on:click.outside="show = false" style="display: none">
+                        <template x-for="item in data">
+                            <a x-on:click="clickResult($event, item.link)" :href="item.link" class="type" :class="{'post': !item.guide, 'page': item.guide}">
+                                <div class="img-content">
+                                    <img :src="item.image" alt="">
+                                </div>
+                                <div class="content">
+                                    <template x-if="item.taxonomies[0]">
+                                        <div class="tags"  x-text="item.taxonomies[0].name"></div>
+                                    </template>
+                                    <template x-if="item.guide">
+                                        <div class="tilo">Guide</div>
+                                    </template>
+                                    <span class="title" x-text="item.post_title"></span>
+
+                                </div>
+                            </a>
+                        </template>
+                        <template x-if="empty">
+                            <div class="error">
+                                Aucun résultats pour la recherche : "<strong x-text="dataSearch"></strong>"
+                            </div>
+                        </template>
+                    </div>
+                </form>
+                    </div>
+        <ul class="item-menu">
+            <li>
+                <a href="/visiter/" title="Activités">Activités</a>
+            </li>
+            <li>
+                <a class="dropdown-tools" href="/outils-voyageur/" title="Outils">Outils</a>
+            </li>
+            <li>
+                <a href="/qui-sommes-nous/" title="Qui sommes-nous ?">Qui sommes-nous ?</a>
+            </li>
+
+                            <li class="account-icon">
+                    <button x-on:click.prevent="isLoginShow = true; open = false" title="Se connecter">
+                        <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.9968 6.87641C7.89792 6.87641 9.435 5.33933 9.435 3.4382C9.435 1.53708 7.89792 0 5.9968 0C4.09567 0 2.55859 1.53708 2.55859 3.4382C2.55859 5.33933 4.09567 6.87641 5.9968 6.87641ZM5.9968 1.34831C7.14286 1.34831 8.08668 2.29214 8.08668 3.4382C8.08668 4.58427 7.14286 5.52809 5.9968 5.52809C4.85073 5.52809 3.90691 4.58427 3.90691 3.4382C3.90691 2.29214 4.85073 1.34831 5.9968 1.34831Z"
+                                  fill="white"/>
+                            <path d="M6 7.48291C2.92408 7.48291 0.374222 9.82098 0.0376706 12.8099C-0.00399035 13.1799 0.30183 13.4829 0.674157 13.4829C1.04648 13.4829 1.34317 13.1793 1.39689 12.8109C1.72427 10.5655 3.66633 8.83122 6 8.83122C8.33367 8.83122 10.2757 10.5655 10.6031 12.8109C10.6568 13.1793 10.9535 13.4829 11.3258 13.4829C11.6982 13.4829 12.004 13.1799 11.9623 12.8099C11.6258 9.82098 9.07592 7.48291 6 7.48291Z"
+                                  fill="white"/>
+                        </svg>
+                    </button>
+                </li>
+                                </ul>
+        <div x-cloak x-show="open" class="nav-mobile-open">
+            <div class="top-mobile">
+                <div class="logo-content">
+                    <img src="https://generationvoyage.fr/wp-content/themes/toolito/img/logo-black.svg"
+                         loading="lazy" data-no-lazy="1" width="170" height="44"
+                         data-retina="https://generationvoyage.fr/wp-content/themes/toolito/img/logo-black.svg"
+                         alt="Logo Generation Voyage">
+                </div>
+                <div class="nav-icon-menu nav-icon-menu-close" x-on:click.prevent="open = false">
+                    <svg width="36px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                         stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="menu-mobile-content">
+                <ul>
+                    <li>
+                        <a href="/visiter/" title="Toutes les destinations">Toutes les destinations</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-tools" href=/outils-voyageur/ title="Outils du voyageur">Outils du voyageur </a>
+                    </li>
+                    <li>
+                        <a href="/qui-sommes-nous/" title="Qui sommes-nous ?">Qui sommes-nous ?</a>
+                    </li>
+                    <li>
+                        <a href="/newsletter/" title="Newsletter">Newsletter</a>
+                    </li>
+                    <li>
+                        <a href="/contact/" title="Contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="signin">
+                                            <a x-on:click.prevent="isLoginShow = true; open = false" href="/profil/" title="Se connecter">
+                            <svg width="21" height="21" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.9968 6.87641C7.89792 6.87641 9.435 5.33933 9.435 3.4382C9.435 1.53708 7.89792 0 5.9968 0C4.09567 0 2.55859 1.53708 2.55859 3.4382C2.55859 5.33933 4.09567 6.87641 5.9968 6.87641ZM5.9968 1.34831C7.14286 1.34831 8.08668 2.29214 8.08668 3.4382C8.08668 4.58427 7.14286 5.52809 5.9968 5.52809C4.85073 5.52809 3.90691 4.58427 3.90691 3.4382C3.90691 2.29214 4.85073 1.34831 5.9968 1.34831Z"
+                                      fill="black"/>
+                                <path d="M6 7.48291C2.92408 7.48291 0.374222 9.82098 0.0376706 12.8099C-0.00399035 13.1799 0.30183 13.4829 0.674157 13.4829C1.04648 13.4829 1.34317 13.1793 1.39689 12.8109C1.72427 10.5655 3.66633 8.83122 6 8.83122C8.33367 8.83122 10.2757 10.5655 10.6031 12.8109C10.6568 13.1793 10.9535 13.4829 11.3258 13.4829C11.6982 13.4829 12.004 13.1799 11.9623 12.8099C11.6258 9.82098 9.07592 7.48291 6 7.48291Z"
+                                      fill="black"/>
+                            </svg>
+                            Se connecter</a>
+                    
+                </div>
+                <div class="social">
+                    <p>
+                        Suivez-nous sur les réseaux
+                    </p>
+                    <a href="https://www.instagram.com/generation_voyage/" target="_blank"><img width="15" height="15" loading="lazy" src="https://generationvoyage.fr/wp-content/themes/toolito/img/instagram.svg" alt="Logo Instagram"></a>
+                    <a href="https://www.linkedin.com/company/generationvoyage/" target="_blank"><img width="15" height="15" loading="lazy" src="https://generationvoyage.fr/wp-content/themes/toolito/img/linkedin.svg" alt="Logo Linkedin"></a>
+                    <a href="https://www.facebook.com/generationvoyage/" target="_blank"><img width="9" height="17" loading="lazy" src="https://generationvoyage.fr/wp-content/themes/toolito/img/facebook.svg" alt="Logo Facebook"></a>
+                    <a href="https://www.pinterest.fr/generation_voyage/" target="_blank"><img width="13" height="17" loading="lazy" src="https://generationvoyage.fr/wp-content/themes/toolito/img/pinterest.svg" alt="Logo Pinterest"></a>
+                    <a href="https://www.youtube.com/@generationvoyage" target="_blank"><img width="19" height="17" loading="lazy" src="https://generationvoyage.fr/wp-content/themes/toolito/img/youtube-footer.svg" alt="Logo Youtube"></a>
+
+                </div>
+            </div>
+        </div>
+        <div x-cloak x-show="search" :class="{'full':show}" class="search-mobile-open">
+            <div class="top-mobile">
+                <div class="title">
+                    Votre prochaine destination
+                </div>
+                <div class="nav-icon-menu" x-on:click.prevent="closeSearch">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                         stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </div>
+            </div>
+            <form class="" action="/" method="get">
+                <div class="input-group">
+                    <input x-model="dataSearch" @keyup="searchPost" name='s' type="text" placeholder="Corse, Occitanie, Suède...">
+                    <button type="submit" title="Rechercher des articles">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M26.3668 26.3668C26.7165 26.0171 26.7165 25.4502 26.3668 25.1005L21.3244 20.058C20.9696 19.7033 20.9407 19.1443 21.1886 18.7082C21.7228 17.7683 22.0251 16.6796 22.0251 15.5126C22.0251 11.9126 19.1126 9 15.5126 9C11.9126 9 9 11.9126 9 15.5126C9 19.1126 11.9126 22.0251 15.5126 22.0251C16.6706 22.0251 17.7608 21.7201 18.7118 21.1814C19.1456 20.9357 19.7005 20.9668 20.0531 21.3194L25.1005 26.3668C25.4502 26.7165 26.0171 26.7165 26.3668 26.3668ZM10.809 15.5126C10.809 12.9256 12.9256 10.809 15.5126 10.809C18.0995 10.809 20.2161 12.9256 20.2161 15.5126C20.2161 18.0995 18.0995 20.2161 15.5126 20.2161C12.9256 20.2161 10.809 18.0995 10.809 15.5126Z" fill="white"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="results" x-cloak x-show="show" >
+                    <template x-for="item in data">
+                        <a :href="item.link" class="type" :class="{'post': !item.guide, 'page': item.guide}">
+                            <div class="img-content">
+                                <img :src="item.image" alt="">
+                            </div>
+                            <div class="content">
+                                <template x-if="item.taxonomies[0]">
+                                    <div class="tags"  x-text="item.taxonomies[0].name"></div>
+                                </template>
+                                <template x-if="item.guide">
+                                    <div class="tilo">Guide</div>
+                                </template>
+                                <span class="title" x-text="item.post_title"></span>
+
+                            </div>
+                        </a>
+                    </template>
+                    <template x-if="empty">
+                        <div class="error">
+                            Aucun résultats pour la recherche : "<strong x-text="dataSearch"></strong>"
+                        </div>
+                    </template>
+                </div>
+            </form>
+        </div>
+        <div class="icon-content">
+                            <div class="nav-icon-menu" x-on:click.prevent="search = true">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="18" cy="18" r="18" fill="#C6502E"/>
+                        <path d="M26.3668 26.3668C26.7165 26.0171 26.7165 25.4502 26.3668 25.1005L21.3244 20.058C20.9696 19.7033 20.9407 19.1443 21.1886 18.7082C21.7228 17.7683 22.0251 16.6796 22.0251 15.5126C22.0251 11.9126 19.1126 9 15.5126 9C11.9126 9 9 11.9126 9 15.5126C9 19.1126 11.9126 22.0251 15.5126 22.0251C16.6706 22.0251 17.7608 21.7201 18.7118 21.1814C19.1456 20.9357 19.7005 20.9668 20.0531 21.3194L25.1005 26.3668C25.4502 26.7165 26.0171 26.7165 26.3668 26.3668ZM10.809 15.5126C10.809 12.9256 12.9256 10.809 15.5126 10.809C18.0995 10.809 20.2161 12.9256 20.2161 15.5126C20.2161 18.0995 18.0995 20.2161 15.5126 20.2161C12.9256 20.2161 10.809 18.0995 10.809 15.5126Z" fill="white"/>
+                    </svg>
+                </div>
+                        <div class="nav-icon-menu" x-on:click.prevent="open = true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+
+            </div>
+        </div>
+    </nav>
+</div>
+        <article class="entry-article" itemscope itemtype="http://schema.org/Article">
+                                    <div class="ads-core-placer" id="Banniere-Haute_601a7e933e292"
+                             data-ads-core='{"device": "tablet, desktop", "type":"Banniere-Haute"}'></div>
+                                    <div role="main"
+                 id="main-content">
+                <div class="containertableflex">
+                    <div class="tableflex1">
+                        <div class="postcontent">
+                            <div class="entry">
+                                <header class="td-post-title">
+                                    <div class="breadcrumbs-container">
+                                                                                            <p id="breadcrumbs">
+                                                        <span>
+                                                                                                                            <span class="breadcrumb_first">
+                                                                    <a href="https://generationvoyage.fr/visiter/"
+                                                                       class="click_breadcrumbs click_breadcrumbs_tout">
+                                                                        <span>Monde</span><span
+                                                                                class="bread_bracket">></span>
+                                                                    </a>
+                                                                </span>
+                                                                                                                            <span class="breadcrumb_middle">
+                                                                <a href="https://generationvoyage.fr/visiter/emirats-arabes-unis/"
+                                                                   class="click_breadcrumbs click_breadcrumbs_pays">
+                                                                    <span>Émirats arabes unis</span><span
+                                                                            class="bread_bracket">></span>
+                                                                </a>
+                                                            </span>
+                                                                                                                        <span class="breadcrumb_end">
+                                                                <a href="https://generationvoyage.fr/visiter/emirats-arabes-unis/dubai/"
+                                                                   class="click_breadcrumbs click_breadcrumbs_ville"><span>Dubaï</span></a>
+                                                            </span>
+                                                        </span>
+                                                    </p>
+                                                                                        </div>
+                                    
+
+
+    <div class="subnav">
+        <a href="https://generationvoyage.fr/visiter/emirats-arabes-unis/dubai/" class="">Voir le guide Dubaï <svg xmlns="http://www.w3.org/2000/svg" width="26px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+        </a>
+    </div>
+
+
+                                                                        <div class="trop_design">
+                                        <div class="titlearticle"><h1 class="entry-title">Les 6 réalisations d&rsquo;architecture futuriste à ne pas manquer à Dubaï</h1>
+                                            <div class="formcontainer_news">
+                                                <div class="formhomecontainer ">
+                                                    <img width="630" height="420" src="https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai-630x420.jpeg" class="attachment-large size-large wp-post-image" alt="architecture futuriste Dubaï" decoding="async" fetchpriority="high" srcset="https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai-630x420.jpeg 630w, https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai-285x190.jpeg 285w, https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai-768x512.jpeg 768w, https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai-1536x1024.jpeg 1536w, https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai-755x503.jpeg 755w, https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai-1000x667.jpeg 1000w, https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai.jpeg 2000w" sizes="(max-width: 630px) 100vw, 630px" />                                                </div>
+                                                                                                    <div class="formhomepartner">
+                                                                                                                    <span class="affili_text">Trouver les plus belles choses à voir à Dubaï</span>
+                                                            <span id="widget-cta-top"
+                                                                  data-dyg-affi-id="GenVoy"
+                                                                  data-dyg-category="cta"
+                                                                  data-dyg-type="link"
+                                                                  data-dyg-format="4"
+                                                                  data-dyg-custom-options='{
+                                                                            "class": "aff_bouton",
+                                                                            "title": "Voir les offres",
+                                                                            "withSidePanel": true,
+                                                                            "disableLinkIfNoResult": false
+                                                                          }'
+                                                                  data-dyg-locale="fr"
+                                                                  data-dyg-currency-iso="EUR"
+                                                                                                                                                                                                                      data-dyg-address="Dubaï,ae"
+                                                                  data-dyg-search="architecture"
+                                                            ></span>
+                                                                                                            </div>
+                                                                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="td-module-meta-info">
+                                        <div class="writer">
+                                            <div class="td-post-author-name">Par <a
+                                                        href="https://generationvoyage.fr/author/delphine-f/">Delphine Fleury</a>
+                                            </div>
+                                            <span class="td-post-date">
+                                            <time class="entry-date updated td-module-date"
+                                                  datetime="2024-02-08T12:37:24+02:00">Le 08 février, 2024                                            </time>
+                                                <span>Temps de lecture: 6 minutes</span>
+                                        </span>
+                                        </div>
+                                        
+                                        <div class="container-fav-share"
+                                             x-data='Favoris(227909,false, {"Title":"Les 6 r\u00e9alisations d&rsquo;architecture futuriste \u00e0 ne pas manquer \u00e0 Duba\u00ef","Ville_GV":"Duba\u00ef","Region_GV":"","Pays_GV":"\u00c9mirats arabes unis","tag":""})'
+                                             x-init="check" @favoris.window="set($event.detail)">
+                                            <div class="comments-container">
+                                                                                                    <a href="#respond">Écrire un commentaire</a>
+                                                                                            </div>
+                                            <div class="content-btn">
+                                                <div>
+                                                    <a title="Contact" class="typeform-share button_comment"
+                                                       target="_blank"
+                                                       href="/contact/">
+                                                        <svg width="20px" height="20px"
+                                                             xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                             viewBox="0 0 24 24" stroke-width="1.5" stroke="white">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                  d="M3 3v1.5M3 21v-6m0 0l2.77-.693a9 9 0 016.208.682l.108.054a9 9 0 006.086.71l3.114-.732a48.524 48.524 0 01-.005-10.499l-3.11.732a9 9 0 01-6.085-.711l-.108-.054a9 9 0 00-6.208-.682L3 4.5M3 15V4.5"/>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                                <div class="share">
+                                                    <div class="share-btn" x-data="{dropdownMenuShare:false}">
+                                                        <button @click="dropdownMenuShare = ! dropdownMenuShare">
+                                                            <img src="https://generationvoyage.fr/wp-content/themes/toolito/img/share.svg"
+                                                                 width="18px" height="18px" loading="lazy"
+                                                                 alt="share icon">
+                                                        </button>
+                                                        <div x-show="dropdownMenuShare"
+                                                             @click.away="dropdownMenuShare = false" x-cloak
+                                                             class="dropdown-menu">
+                                                            <span>Partager sur :</span>
+                                                            <div>
+                                                                <a target="_blank"
+                                                                   href="https://www.facebook.com/share.php?u=https://generationvoyage.fr/architecture-futuriste-dubai/?utm_source=facebook%26utm_medium=share"
+                                                                   title="Facebook">
+                                                                    <svg height="16px"
+                                                                         xmlns="http://www.w3.org/2000/svg"
+                                                                         viewBox="0 0 320 512">
+                                                                        <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
+                                                                    </svg>
+                                                                </a>
+                                                                <a target="_blank"
+                                                                   href="https://pinterest.com/pin/create/link/?url=https://generationvoyage.fr/architecture-futuriste-dubai/?utm_source=pinterest%26utm_medium=share&description=Les%206%20r%C3%A9alisations%20d%26rsquo%3Barchitecture%20futuriste%20%C3%A0%20ne%20pas%20manquer%20%C3%A0%20Duba%C3%AF&media=https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai-755x503.jpeg"
+                                                                   title="Pinterest">
+                                                                    <svg height="16px"
+                                                                         xmlns="http://www.w3.org/2000/svg"
+                                                                         viewBox="0 0 496 512">
+                                                                        <path d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z"/>
+                                                                    </svg>
+                                                                </a>
+                                                                <a target="_blank"
+                                                                   href="https://www.linkedin.com/sharing/share-offsite/?url=https://generationvoyage.fr/architecture-futuriste-dubai/"
+                                                                   title="Linkedin">
+                                                                    <svg height="16px"
+                                                                         xmlns="http://www.w3.org/2000/svg"
+                                                                         viewBox="0 0 448 512">
+                                                                        <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/>
+                                                                    </svg>
+                                                                </a>
+                                                                <a href="#" x-on:click="copyLink">
+                                                                    <svg class="copy-link"
+                                                                         xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                         viewBox="0 0 24 24" stroke-width="1.5"
+                                                                         stroke="currentColor" width="20px"
+                                                                         height="20px">
+                                                                        <path stroke-linecap="round"
+                                                                              stroke-linejoin="round"
+                                                                              d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/>
+                                                                    </svg>
+                                                                </a>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div x-data="{dropdownMenu: false}" class="dropdown-container">
+                                                                                                            <button title="Ajouter au favoris" x-show="!isMyFavorite.step"
+                                                                x-on:click="isRegisterShow = true;registerFrom = 'bookmark';addToCookie(227909)"
+                                                                class="addBookmark">
+                                                            <span class="addBookmark-ArtId227909">
+                                                                <svg width="20" height="18" viewBox="0 0 20 18"
+                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M18.3304 1.68187C17.2073 0.560623 15.7433 0 14.2592 0C12.7952 0 11.3312 0.560623 10.2081 1.68187L10.0075 1.90211L9.78691 1.68187C8.66383 0.560623 7.1998 0 5.73577 0C4.27175 0 2.80772 0.560623 1.68463 1.68187C-0.561544 3.92436 -0.561544 7.56841 1.68463 9.8109L2.1459 10.2714L9.76686 17.8999C9.82702 17.96 9.9273 18 10.0075 18C10.1078 18 10.188 17.96 10.2482 17.8999L17.8691 10.2714L18.3304 9.8109C20.5565 7.56841 20.5565 3.92436 18.3304 1.68187ZM17.1873 8.66963L16.726 9.13014L10.0075 15.8576L3.26899 9.13014L2.80772 8.66963C1.20331 7.04783 1.20331 4.42492 2.80772 2.82314C3.58987 2.04227 4.63274 1.60178 5.73577 1.60178H5.75583C6.85886 1.60178 7.88168 2.04227 8.66383 2.82314L8.88443 3.04338L10.0276 4.18465L11.1707 3.04338L11.3713 2.84316C12.1334 2.04227 13.1562 1.60178 14.2592 1.60178C15.3622 1.60178 16.4051 2.02225 17.1672 2.80311C18.7917 4.42492 18.7917 7.04783 17.1873 8.66963Z"
+                                                                          fill="white"/>
+                                                                </svg>
+                                                            </span>
+                                                        </button>
+                                                                                                        <button title="Retirer des favoris" x-cloak
+                                                            x-show="isMyFavorite.step"
+                                                            @click="removeToFavorite()" class="removeBookmark">
+                                                        <span class="removeBookmark-ArtId227909">
+                                                            <svg width="20" height="18" viewBox="0 0 20 18" fill="none"
+                                                                 xmlns="http://www.w3.org/2000/svg">
+                                                                   <path d="M18.33,1.682C17.207,0.561 15.743,0 14.259,0C12.795,0 11.331,0.561 10.208,1.682L10.008,1.902L9.787,1.682C8.664,0.561 7.2,0 5.736,0C4.272,0 2.808,0.561 1.685,1.682C-0.562,3.924 -0.562,7.568 1.685,9.811L2.146,10.271L9.767,17.9C9.827,17.96 9.927,18 10.008,18C10.108,18 10.188,17.96 10.248,17.9L17.869,10.271L18.33,9.811C20.557,7.568 20.557,3.924 18.33,1.682Z"
+                                                                         style="fill:white;fill-rule:nonzero;"/>
+                                                            </svg>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </header>
+                                <div itemprop="articleBody" class="p402_premium">
+                                    <p class="intro">Embarquez pour un voyage extraordinaire au c&oelig;ur de l&rsquo;architecture futuriste de <a href="https://generationvoyage.fr/visiter/emirats-arabes-unis/dubai/">Duba&iuml;</a>. D&eacute;couvrez une ville o&ugrave; les limites de l&rsquo;imagination semblent repouss&eacute;es &agrave; chaque instant par ses b&acirc;timents.</p><nav id="sommaire-article" class="sommaire_desktop"><span class="sommaire">Sommaire</span><ul><li><a href="#complexe-one-zaabeel" class="title_lvl3">Complexe One Za&rsquo;abeel</a></li><li><a href="#muse-du-futur-museum-of-the-future" class="title_lvl3">Mus&eacute;e du Futur (Museum of the future)</a></li><li><a href="#les-les-artificielles-palm-jumeirah-et-the-world" class="title_lvl3">Les &icirc;les artificielles Palm Jumeirah et The World</a></li><li><a href="#the-opus-by-zaha-hadid" class="title_lvl3">The Opus by Zaha Hadid</a></li><li><a href="#burj-khalifa" class="title_lvl3">Burj Khalifa</a></li><li><a href="#the-frame" class="title_lvl3">The Frame</a></li></ul></nav>
+<p>L&rsquo;architecture futuriste de <a href="https://generationvoyage.fr/visiter-dubai-faire-voir/">Duba&iuml;</a>, fait de cette ville des &Eacute;mirats arabes unis une destination qui ne cesse d&rsquo;&eacute;tonner par sa d&eacute;mesure et son ambition sans limites. Connue pour sa skyline &eacute;blouissante, la m&eacute;tropole est une terre de pr&eacute;dilection pour les architectes de renomm&eacute;e internationale qui y ont cr&eacute;&eacute; des chefs-d&rsquo;&oelig;uvre urbains au design innovant.</p>
+<p>Nous vous invitons &agrave; d&eacute;couvrir les 6 r&eacute;alisations d&rsquo;architecture futuriste &agrave; ne pas manquer &agrave; Duba&iuml;. Du plus haut gratte-ciel du monde &agrave; des &eacute;difices aux courbes inspir&eacute;es de la nature, chaque b&acirc;timent est une prouesse technologique qui d&eacute;montre la vision audacieuse de Duba&iuml;, r&eacute;solument tourn&eacute;e vers l&rsquo;avenir. Pr&eacute;parez-vous &agrave; &ecirc;tre &eacute;bloui par ces merveilles d&rsquo;architecture futuriste &agrave; Duba&iuml;.</p><div id="div-ad-pave-haut2-desktop" class="ads-core-placer" data-ads-core='{"device": "tablet, desktop", "type":"Pave-Haut2-Desktop"}'></div><div class="textcontainer2 textcontainer-yarpp">
+    <span class="textcontainer2_title">&Agrave; lire aussi sur le guide Duba&iuml; :</span>
+    <ul>
+		            <li><a class="liensarticle article yarpp sc" href="https://generationvoyage.fr/visiter-dubai-faire-voir/">Visiter Duba&iuml; : les 17 choses incontournables &agrave; faire</a></li>
+		                <li><a class="liensarticle article yarpp sc" href="https://generationvoyage.fr/visiter-desert-dubai/">Visiter le D&eacute;sert de Duba&iuml; : notre s&eacute;lection d'excursions &amp;amp; safaris</a></li>
+		                <li><a class="liensarticle article yarpp sc" href="https://generationvoyage.fr/airbnb-dubai/">Airbnb Duba&iuml; : les meilleurs appartements Airbnb &agrave; Duba&iuml;</a></li>
+		                <li><a class="liensarticle article yarpp sc" href="https://generationvoyage.fr/visiter-burj-khalifa-dubai/">Visiter le Burj Khalifa : billets, tarifs, horaires</a></li>
+		        </ul>
+</div>
+
+<h2 id="complexe-one-zaabeel">Complexe One Za&rsquo;abeel</h2>
+<div id="attachment_228739" style="width: 765px" class="wp-caption alignnone"><img decoding="async" aria-describedby="caption-attachment-228739" src="https://cdn.generationvoyage.fr/2024/01/Dubai-One-Zaabeel-755x566.jpeg" alt="Duba&iuml; One Za'abeel" width="755" height="566" class="size-large-article wp-image-228739" srcset="https://cdn.generationvoyage.fr/2024/01/Dubai-One-Zaabeel-755x566.jpeg 755w, https://cdn.generationvoyage.fr/2024/01/Dubai-One-Zaabeel-253x190.jpeg 253w, https://cdn.generationvoyage.fr/2024/01/Dubai-One-Zaabeel-630x473.jpeg 630w, https://cdn.generationvoyage.fr/2024/01/Dubai-One-Zaabeel-200x150.jpeg 200w, https://cdn.generationvoyage.fr/2024/01/Dubai-One-Zaabeel-768x576.jpeg 768w, https://cdn.generationvoyage.fr/2024/01/Dubai-One-Zaabeel-1536x1152.jpeg 1536w, https://cdn.generationvoyage.fr/2024/01/Dubai-One-Zaabeel-1000x750.jpeg 1000w, https://cdn.generationvoyage.fr/2024/01/Dubai-One-Zaabeel.jpeg 2000w" sizes="(max-width: 755px) 100vw, 755px"/><p id="caption-attachment-228739" class="wp-caption-text">Shutterstock &#8211; Arnold O. A. Pinto</p></div>
+<p><strong>Pourquoi nous l&rsquo;avons s&eacute;lectionn&eacute; :</strong> Le Complexe &laquo;&nbsp;One Za&rsquo;abeel&nbsp;&raquo; se distingue par son audace architecturale et sa symbolique forte. Sa structure complexe s&rsquo;illustre par <em>&laquo;&nbsp;The Linx&nbsp;&raquo;</em>, une passerelle suspendue reliant deux tours. Cet embl&egrave;me de l&rsquo;innovation architecturale est une v&eacute;ritable vitrine du futurisme que Duba&iuml; incarne.</p>
+<p><strong>Pour en savoir plus :</strong> Le &laquo;&nbsp;One Za&rsquo;abeel&nbsp;&raquo; est un complexe impressionnant situ&eacute; au centre de Duba&iuml;, connu pour son architecture futuriste en porte-&agrave;-faux. Il se compose de deux tours diff&eacute;rentes : l&rsquo;une pour les r&eacute;sidences de luxe, l&rsquo;autre pour des bureaux de haut standing. L&rsquo;int&eacute;rieur a &eacute;t&eacute; con&ccedil;u par Jean-Michel Gathy, qui s&rsquo;est inspir&eacute; des couleurs et motifs du d&eacute;sert local.</p>
+<p>Le complexe abrite &eacute;galement le premier &laquo;&nbsp;One&#038;Only Urban Resort&nbsp;&raquo; de Duba&iuml;. On peut y profiter de <strong>vues incroyables sur la ville</strong>, d&rsquo;un excellent repas pr&eacute;par&eacute; par des chefs &eacute;toil&eacute;s Michelin, d&rsquo;un centre de bien-&ecirc;tre luxueux et d&rsquo;une terrasse panoramique. De plus, il offre une exp&eacute;rience de shopping exclusive. Quel que soit le moyen de transport, il est facile d&rsquo;acc&eacute;der &agrave; ce remarquable exemple d&rsquo;architecture futuriste &agrave; Duba&iuml;.</p>
+<div class="bouton_section">
+        <span id="1706279240" data-dyg-affi-id="GenVoy" data-dyg-category="cta" data-dyg-type="link" data-dyg-format="4" data-dyg-custom-options='{
+                "class": "bouton_dyg_simple bouton",
+                "title": "D&eacute;couvrir le Complex One Za&#039;abeel",
+                "withSidePanel": true,
+                "hideLinkIfNoResult": true,
+                "disableLinkIfNoResult": true
+            }' data-dyg-locale="fr" data-dyg-currency-iso="EUR" data-dyg-address="Duba&iuml;" data-dyg-search="architecture"></span>
+    </div>
+<h2 id="muse-du-futur-museum-of-the-future">Mus&eacute;e du Futur (Museum of the future)</h2>
+<div id="attachment_228741" style="width: 765px" class="wp-caption alignnone"><img decoding="async" aria-describedby="caption-attachment-228741" src="https://cdn.generationvoyage.fr/2024/01/musee-du-futur-Dubai-755x503.jpeg" alt="mus&eacute;e du futur Duba&iuml;" width="755" height="503" class="size-large-article wp-image-228741" srcset="https://cdn.generationvoyage.fr/2024/01/musee-du-futur-Dubai-755x503.jpeg 755w, https://cdn.generationvoyage.fr/2024/01/musee-du-futur-Dubai-285x190.jpeg 285w, https://cdn.generationvoyage.fr/2024/01/musee-du-futur-Dubai-630x420.jpeg 630w, https://cdn.generationvoyage.fr/2024/01/musee-du-futur-Dubai-768x512.jpeg 768w, https://cdn.generationvoyage.fr/2024/01/musee-du-futur-Dubai-1536x1024.jpeg 1536w, https://cdn.generationvoyage.fr/2024/01/musee-du-futur-Dubai-1000x667.jpeg 1000w, https://cdn.generationvoyage.fr/2024/01/musee-du-futur-Dubai.jpeg 2000w" sizes="(max-width: 755px) 100vw, 755px"/><p id="caption-attachment-228741" class="wp-caption-text">Shutterstock &#8211; Sudarsan Thobias</p></div>
+<p><strong>Pourquoi nous l&rsquo;avons s&eacute;lectionn&eacute; :</strong> Le Mus&eacute;e du Futur est un v&eacute;ritable joyau architectural qui illumine la skyline de Duba&iuml;. Son design toro&iuml;dal unique, combin&eacute; &agrave; une fa&ccedil;ade en inox orn&eacute;e de calligraphie arabe, le hisse au rang de <strong>symbole de l&rsquo;innovation et du design</strong>. Salu&eacute; par le <em>National Geographic</em> comme l&rsquo;un des plus beaux mus&eacute;es du monde, sa fa&ccedil;ade est un chef-d&rsquo;&oelig;uvre compos&eacute; de 1024 panneaux en acier inoxydable.</p>
+<p><strong>Pour en savoir plus :</strong> Le Mus&eacute;e du Futur &agrave; Duba&iuml; se trouve dans le centre financier de la ville. Vous pouvez y arriver en m&eacute;tro, en voiture ou &agrave; pied gr&acirc;ce &agrave; un pont de 212 m&egrave;tres qui m&egrave;ne &agrave; la station de m&eacute;tro <em>Emirates Towers</em>. L&rsquo;architecture futuriste du mus&eacute;e est unique et marie l&rsquo;art, la technologie de pointe et l&rsquo;ing&eacute;nierie robotique. Le mus&eacute;e fonctionne &agrave; l&rsquo;&eacute;nergie solaire, ce qui en fait un symbole de durabilit&eacute;.</p>
+<p>De jour comme de nuit, le mus&eacute;e scintille gr&acirc;ce &agrave; des jeux de lumi&egrave;re qui mettent en valeur la calligraphie arabe qui habille la fa&ccedil;ade. Ce mus&eacute;e n&rsquo;est pas qu&rsquo;une construction d&rsquo;exception, il est aussi un centre d&rsquo;innovation. Il h&eacute;berge des laboratoires et un centre pour les chercheurs, designers, inventeurs et financiers. On y trouve de nombreuses expositions sur diff&eacute;rents sujets du futur comme les ressources spatiales, les &eacute;cosyst&egrave;mes, la bio-ing&eacute;nierie, entre autres. En visitant ce joyau de l&rsquo;architecture de Duba&iuml;, vous entrez litt&eacute;ralement dans le futur.</p>
+<div class="bouton_section">
+        <span id="1706279380" data-dyg-affi-id="GenVoy" data-dyg-category="cta" data-dyg-type="link" data-dyg-format="4" data-dyg-custom-options='{
+                "class": "bouton_dyg_simple bouton",
+                "title": "Visiter le mus&eacute;e du Futur &agrave; Duba&iuml;",
+                "withSidePanel": true,
+                "hideLinkIfNoResult": true,
+                "disableLinkIfNoResult": true
+            }' data-dyg-locale="fr" data-dyg-currency-iso="EUR" data-dyg-address="" data-dyg-search="Mus&eacute;e Duba&iuml;"></span>
+    </div>
+<h2 id="les-les-artificielles-palm-jumeirah-et-the-world">Les &icirc;les artificielles Palm Jumeirah et The World</h2>
+<div id="attachment_228742" style="width: 765px" class="wp-caption alignnone"><img decoding="async" aria-describedby="caption-attachment-228742" src="https://cdn.generationvoyage.fr/2024/01/Palm-Jumeirah-Dubai-755x503.jpeg" alt="Palm Jumeirah Duba&iuml;" width="755" height="503" class="size-large-article wp-image-228742" srcset="https://cdn.generationvoyage.fr/2024/01/Palm-Jumeirah-Dubai-755x503.jpeg 755w, https://cdn.generationvoyage.fr/2024/01/Palm-Jumeirah-Dubai-285x190.jpeg 285w, https://cdn.generationvoyage.fr/2024/01/Palm-Jumeirah-Dubai-630x420.jpeg 630w, https://cdn.generationvoyage.fr/2024/01/Palm-Jumeirah-Dubai-768x512.jpeg 768w, https://cdn.generationvoyage.fr/2024/01/Palm-Jumeirah-Dubai-1536x1024.jpeg 1536w, https://cdn.generationvoyage.fr/2024/01/Palm-Jumeirah-Dubai-1000x667.jpeg 1000w, https://cdn.generationvoyage.fr/2024/01/Palm-Jumeirah-Dubai.jpeg 1999w" sizes="(max-width: 755px) 100vw, 755px"/><p id="caption-attachment-228742" class="wp-caption-text">Shutterstock &#8211; Rodrigo Kristensen</p></div>
+<p><strong>Pourquoi nous l&rsquo;avons s&eacute;lectionn&eacute; :</strong> Les &icirc;les artificielles de &laquo;&nbsp;Palm Jumeirah&nbsp;&raquo; et &laquo;&nbsp;The World&nbsp;&raquo; incarnent parfaitement l&rsquo;ing&eacute;niosit&eacute; et la cr&eacute;ativit&eacute; humaines. Palm Jumeirah, notamment, impressionne par son design iconique en forme de palmier. Ce chef-d&rsquo;&oelig;uvre architectural est une v&eacute;ritable prouesse technique qui t&eacute;moigne de l&rsquo;audace et du modernisme de Duba&iuml;.</p>
+<p><strong>Pour en savoir plus :</strong> Duba&iuml; rel&egrave;ve tous les d&eacute;fis architecturaux et Palm Jumeirah en est la preuve. Cette &icirc;le artificielle accueille de nombreuses villas luxueuses, de restaurants de haute vol&eacute;e et des <a href="https://generationvoyage.fr/4-hotels-demesures-dubai/">h&ocirc;tels cinq &eacute;toiles comme l&rsquo;Atlantis</a>. Elle est aussi l&rsquo;endroit id&eacute;al pour les amateurs de sports nautiques. Palm Jumeirah, construite au d&eacute;but des ann&eacute;es 2000, est le symbole du futurisme architectural de Duba&iuml;.</p>
+<p>On peut acc&eacute;der facilement &agrave; la Palm Jumeriah en m&eacute;tro jusqu&rsquo;&agrave; la station <em>Nakheel Harbour and Tower</em> sur la ligne rouge. De l&agrave;, vous pouvez prendre un taxi ou un bus jusqu&rsquo;&agrave; la station de monorail <em>Palm Gatewa</em>y ou <em>Atlantis Aquaventure</em>, qui vous permettra de faire le tour de l&rsquo;&icirc;le. Une autre attraction &agrave; ne pas manquer est <em>&laquo;&nbsp;The World&nbsp;&raquo;</em>, <strong>un archipel de 300 &icirc;les artificielles</strong>, qui s&rsquo;apparente &agrave; une carte du monde. Bien que &laquo;&nbsp;The World&nbsp;&raquo; soit toujours en projet et pas encore ouvert au public, il fait le pari de devenir la prochaine ic&ocirc;ne de l&rsquo;architecture futuriste de Duba&iuml;.</p>
+<div class="bouton_section">
+        <span id="1706279535" data-dyg-affi-id="GenVoy" data-dyg-category="cta" data-dyg-type="link" data-dyg-format="4" data-dyg-custom-options='{
+                "class": "bouton_dyg_simple bouton",
+                "title": "Explorer les &icirc;les artificielles de Duba&iuml;",
+                "withSidePanel": true,
+                "hideLinkIfNoResult": true,
+                "disableLinkIfNoResult": true
+            }' data-dyg-locale="fr" data-dyg-currency-iso="EUR" data-dyg-address="" data-dyg-search="Palm Jumeirah"></span>
+    </div><div class="textcontainer2 textcontainer-yarpp">
+    <span class="textcontainer2_title">À lire aussi sur le guide Dubaï :</span>
+    <ul>
+		            <li><a class="liensarticle article yarpp sc" href="https://generationvoyage.fr/survoler-dubai/">Survoler Dubaï : notre sélection des meilleures expériences</a></li>
+		                <li><a class="liensarticle article yarpp sc" href="https://generationvoyage.fr/faits-inconnus-dubai/">Les 13 choses que vous ne saviez pas sur Dubaï</a></li>
+		                <li><a class="liensarticle article yarpp sc" href="https://generationvoyage.fr/buildings-dubai/">Les 7 buildings les plus impressionnants de Dubaï</a></li>
+		                <li><a class="liensarticle article yarpp sc" href="https://generationvoyage.fr/location-voiture-dubai/">Location de voiture à Dubaï : conseils, tarifs, itinéraires</a></li>
+		        </ul>
+</div>
+
+<h2 id="the-opus-by-zaha-hadid">The Opus by Zaha Hadid</h2>
+<div id="attachment_228743" style="width: 765px" class="wp-caption alignnone"><img loading="lazy" decoding="async" aria-describedby="caption-attachment-228743" src="https://cdn.generationvoyage.fr/2024/01/The-Opus-Dubai-755x503.jpeg" alt="The Opus Duba&iuml;" width="755" height="503" class="size-large-article wp-image-228743" srcset="https://cdn.generationvoyage.fr/2024/01/The-Opus-Dubai-755x503.jpeg 755w, https://cdn.generationvoyage.fr/2024/01/The-Opus-Dubai-285x190.jpeg 285w, https://cdn.generationvoyage.fr/2024/01/The-Opus-Dubai-630x420.jpeg 630w, https://cdn.generationvoyage.fr/2024/01/The-Opus-Dubai-768x512.jpeg 768w, https://cdn.generationvoyage.fr/2024/01/The-Opus-Dubai-1536x1024.jpeg 1536w, https://cdn.generationvoyage.fr/2024/01/The-Opus-Dubai-1000x667.jpeg 1000w, https://cdn.generationvoyage.fr/2024/01/The-Opus-Dubai.jpeg 1999w" sizes="(max-width: 755px) 100vw, 755px"/><p id="caption-attachment-228743" class="wp-caption-text">Shutterstock &#8211; Sanoop.cp</p></div>
+<p><strong>Pourquoi nous l&rsquo;avons s&eacute;lectionn&eacute; :</strong> L&rsquo;Opus de Zaha Hadid est un projet architectural reconnu pour son design unique, repr&eacute;sentant un cube perfor&eacute; au centre. Cette caract&eacute;ristique le positionne comme une ic&ocirc;ne incontournable de la ville. Sa fa&ccedil;ade ext&eacute;rieure pix&eacute;lis&eacute;e ajoute &agrave; son charme, d&eacute;montrant un v&eacute;ritable exploit de prouesse technique et esth&eacute;tique.</p>
+<p><strong>Pour en savoir plus :</strong> Si vous aimez l&rsquo;architecture futuriste, alors vous devez voir &laquo;&nbsp;The Opus&nbsp;&raquo; &agrave; Duba&iuml;. C&rsquo;est le seul b&acirc;timent con&ccedil;u par Zaha Hadid dans l&rsquo;&eacute;mirat et il ressort clairement dans le paysage urbain de Duba&iuml;. Il est facile &agrave; rep&eacute;rer dans le quartier du Burj Khalifa, avec un design unique qui comprend un &laquo;&nbsp;vide libre&nbsp;&raquo; au centre d&rsquo;une structure cubique. &laquo;&nbsp;The Opus&nbsp;&raquo; comprend deux grandes tours reli&eacute;es par un pont a&eacute;rien et un atrium au rez-de-chauss&eacute;e.</p>
+<p>&Agrave; l&rsquo;int&eacute;rieur de &laquo;&nbsp;The Opus&nbsp;&raquo;, l&rsquo;h&ocirc;tel &laquo;&nbsp;ME by Melia&nbsp;&raquo; a ouvert ses portes en 2018. Mais ce b&acirc;timent est bien plus qu&rsquo;un simple h&ocirc;tel. Il int&egrave;gre &eacute;galement des r&eacute;sidences de luxe offrant des services h&ocirc;teliers et de nombreuses facilit&eacute;s comme une salle de bal, des espaces de bureaux, un spa, <a href="https://generationvoyage.fr/meilleurs-restaurants-dubai/">des restaurants</a> et des boutiques. De plus, gr&acirc;ce &agrave; son emplacement id&eacute;al pr&egrave;s du centre-ville de Duba&iuml;, vous pouvez y acc&eacute;der facilement en voiture, en taxi ou en bus.</p>
+<div class="bouton_section">
+        <span id="1706279673" data-dyg-affi-id="GenVoy" data-dyg-category="cta" data-dyg-type="link" data-dyg-format="4" data-dyg-custom-options='{
+                "class": "bouton_dyg_simple bouton",
+                "title": "Admirer l&#039;Opus by Zaha Hadid",
+                "withSidePanel": true,
+                "hideLinkIfNoResult": true,
+                "disableLinkIfNoResult": true
+            }' data-dyg-locale="fr" data-dyg-currency-iso="EUR" data-dyg-address="Duba&iuml;" data-dyg-search="h&ocirc;tel"></span>
+    </div><div id="div-ad-pave-haut2-desktop-1" class="ads-core-placer" data-ads-core='{"device": "tablet, desktop", "type":"Pave-Haut2-Desktop"}'></div>
+<h2 id="burj-khalifa">Burj Khalifa</h2>
+<div id="attachment_228745" style="width: 765px" class="wp-caption alignnone"><img loading="lazy" decoding="async" aria-describedby="caption-attachment-228745" src="https://cdn.generationvoyage.fr/2024/01/dubai-architecture-futuriste-Burj-Khalifa-755x503.jpeg" alt="duba&iuml; architecture futuriste Burj Khalifa" width="755" height="503" class="size-large-article wp-image-228745" srcset="https://cdn.generationvoyage.fr/2024/01/dubai-architecture-futuriste-Burj-Khalifa-755x503.jpeg 755w, https://cdn.generationvoyage.fr/2024/01/dubai-architecture-futuriste-Burj-Khalifa-285x190.jpeg 285w, https://cdn.generationvoyage.fr/2024/01/dubai-architecture-futuriste-Burj-Khalifa-630x420.jpeg 630w, https://cdn.generationvoyage.fr/2024/01/dubai-architecture-futuriste-Burj-Khalifa-768x512.jpeg 768w, https://cdn.generationvoyage.fr/2024/01/dubai-architecture-futuriste-Burj-Khalifa-1536x1024.jpeg 1536w, https://cdn.generationvoyage.fr/2024/01/dubai-architecture-futuriste-Burj-Khalifa-1000x667.jpeg 1000w, https://cdn.generationvoyage.fr/2024/01/dubai-architecture-futuriste-Burj-Khalifa.jpeg 2000w" sizes="(max-width: 755px) 100vw, 755px"/><p id="caption-attachment-228745" class="wp-caption-text">Shutterstock &#8211; Saiko3p</p></div>
+<p><strong>Pourquoi nous l&rsquo;avons s&eacute;lectionn&eacute; :</strong> Le <a href="https://generationvoyage.fr/visiter-burj-khalifa-dubai/">Burj Khalifa</a>, un chef-d&rsquo;&oelig;uvre architectural de Duba&iuml;, se dresse &agrave; une hauteur vertigineuse de 828 m&egrave;tres, devenant ainsi <strong>la plus haute tour du monde</strong>. Elle d&eacute;tient &eacute;galement le record du plus grand nombre d&rsquo;&eacute;tages et l&rsquo;ascenseur &agrave; la plus longue distance de d&eacute;placement. En plus de ces prouesses techniques, le Burj Khalifa est un hommage &agrave; l&rsquo;h&eacute;ritage culturel du Moyen-Orient, son design s&rsquo;inspirant de l&rsquo;architecture traditionnelle.</p>
+<p><strong>Pour en savoir plus :</strong> Le Burj Khalifa &agrave; Duba&iuml; est un phare de l&rsquo;architecture futuriste. Apr&egrave;s une construction &eacute;tal&eacute;e sur six ans, le monument a ouvert ses portes en 2010. En plus d&rsquo;&ecirc;tre une ic&ocirc;ne mondiale, vous pouvez y monter et contempler une vue incroyable sur le golfe persique. Les billets sont disponibles en ligne ou sur place. Il est pr&eacute;f&eacute;rable de r&eacute;server en avance pour acc&eacute;der aux plateformes d&rsquo;observation situ&eacute;es au niveau du <em>Duba&iuml; Mall</em>.</p>
+<p>Non seulement, le Burj Khalifa offre un panorama renversant, mais il comprend &eacute;galement des appartements de luxe, des bureaux, des espaces d&rsquo;expositions, des restaurants et un h&ocirc;tel. Une preuve de plus qui montre la volont&eacute; de Duba&iuml; de se positionner comme une destination futuriste visionnaire. De plus, la tour est id&eacute;alement situ&eacute;e au centre de <em>Downtown Duba&iuml;</em> et est facilement accessible par les transports en commun.</p>
+<div class="bouton_section">
+        <span id="1706279799" data-dyg-affi-id="GenVoy" data-dyg-category="cta" data-dyg-type="link" data-dyg-format="4" data-dyg-custom-options='{
+                "class": "bouton_dyg_simple bouton",
+                "title": "Monter au sommet du Burj Khalifa &agrave; Duba&iuml;",
+                "withSidePanel": true,
+                "hideLinkIfNoResult": true,
+                "disableLinkIfNoResult": true
+            }' data-dyg-locale="fr" data-dyg-currency-iso="EUR" data-dyg-address="" data-dyg-search="Burj Khalifa"></span>
+    </div>
+<h2 id="the-frame">The Frame</h2>
+<div id="attachment_228746" style="width: 765px" class="wp-caption alignnone"><img loading="lazy" decoding="async" aria-describedby="caption-attachment-228746" src="https://cdn.generationvoyage.fr/2024/01/the-frame-Dubai-755x503.jpeg" alt="the frame Duba&iuml;" width="755" height="503" class="size-large-article wp-image-228746" srcset="https://cdn.generationvoyage.fr/2024/01/the-frame-Dubai-755x503.jpeg 755w, https://cdn.generationvoyage.fr/2024/01/the-frame-Dubai-285x190.jpeg 285w, https://cdn.generationvoyage.fr/2024/01/the-frame-Dubai-630x420.jpeg 630w, https://cdn.generationvoyage.fr/2024/01/the-frame-Dubai-768x512.jpeg 768w, https://cdn.generationvoyage.fr/2024/01/the-frame-Dubai-1536x1024.jpeg 1536w, https://cdn.generationvoyage.fr/2024/01/the-frame-Dubai-1000x667.jpeg 1000w, https://cdn.generationvoyage.fr/2024/01/the-frame-Dubai.jpeg 2000w" sizes="(max-width: 755px) 100vw, 755px"/><p id="caption-attachment-228746" class="wp-caption-text">Shutterstock &#8211; Majd H</p></div>
+<p><strong>Pourquoi nous l&rsquo;avons s&eacute;lectionn&eacute; :</strong> &laquo;&nbsp;The Frame&nbsp;&raquo; &agrave; Duba&iuml; est bien plus qu&rsquo;un simple monument ; c&rsquo;est un symbole architectural qui fusionne l&rsquo;histoire et le modernisme. Gr&acirc;ce &agrave; sa position strat&eacute;gique, il capture parfaitement l&rsquo;essence du vieux et du nouveau Duba&iuml;. En tant que plus <strong>grand cadre au monde</strong>, il illustre parfaitement la transition de l&rsquo;&eacute;mirat, un pont visuel entre son pass&eacute; historique et son pr&eacute;sent innovant.</p>
+<p><strong>Pour en savoir plus :</strong> Duba&iuml;, la cit&eacute; du futur, est r&eacute;put&eacute;e pour son architecture impressionnante. L&rsquo;un de ses monuments le plus embl&eacute;matique est le &laquo;&nbsp;Dubai Frame&nbsp;&raquo;, un immense cadre de 150 m&egrave;tres de haut et 95 m&egrave;tres de large. Ce projet architectural de grande ampleur se compose de pr&egrave;s de 9900 m&egrave;tres cube de b&eacute;ton arm&eacute;, 2000 tonnes d&rsquo;acier et 2900 m² de verre lamin&eacute;. Au sommet, une passerelle d&rsquo;observation offre des vues renversantes sur Duba&iuml;. Vous pouvez y acc&eacute;der rapidement gr&acirc;ce &agrave; un ascenseur qui grimpe 48 &eacute;tages en seulement 75 secondes.</p>
+<p><a href="https://generationvoyage.fr/survoler-dubai/">Pour une exp&eacute;rience sensationnelle</a>, essayez la passerelle de verre illumin&eacute;e. Le &laquo;&nbsp;Duba&iuml; Frame&nbsp;&raquo; est id&eacute;alement situ&eacute; dans le <em>Zabeel Park</em>, ce qui le rend facilement accessible. Vous pouvez acheter vos billets en ligne ou sur place. Ajoutez &agrave; votre visite une visite des expositions interactives qui retracent l&rsquo;histoire de Duba&iuml;. N&rsquo;oubliez pas de prendre des photos pour immortaliser ce moment ou d&rsquo;opter pour une pause-caf&eacute; &agrave; plus de 150 m de hauteur.</p>
+<div class="bouton_section">
+        <span id="1706279948" data-dyg-affi-id="GenVoy" data-dyg-category="cta" data-dyg-type="link" data-dyg-format="4" data-dyg-custom-options='{
+                "class": "bouton_dyg_simple bouton",
+                "title": "Voir la vue panoramique depuis The Frame",
+                "withSidePanel": true,
+                "hideLinkIfNoResult": true,
+                "disableLinkIfNoResult": true
+            }' data-dyg-locale="fr" data-dyg-currency-iso="EUR" data-dyg-address="" data-dyg-search="Duba&iuml; Frame"></span>
+    </div>
+<p>Alors, qu&rsquo;attendez-vous pour d&eacute;couvrir ces incroyables r&eacute;alisations d&rsquo;architecture futuriste &agrave; Duba&iuml; ? Partagez vos suggestions dans les commentaires et laissez-vous emporter par l&rsquo;exp&eacute;rience de ces merveilles architecturales. Pr&ecirc;t &agrave; vivre l&rsquo;extraordinaire ?</p>                                </div>
+                                <div class="clear"></div>
+                                                            </div>
+                            <footer>
+                                <link itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage"
+                                      href="https://generationvoyage.fr/architecture-futuriste-dubai/" id="https://generationvoyage.fr/architecture-futuriste-dubai/"/>
+                                <span style="display: none;" itemprop="publisher" itemscope
+                                      itemtype="https://schema.org/Organization">
+                                    <meta itemprop="name" content="GenerationVoyage">
+                                    <span style="display: none;" itemprop="logo" itemscope
+                                          itemtype="https://schema.org/ImageObject">
+                                        <meta itemprop="url"
+                                              content="https://generationvoyage.fr/wp-content/themes/toolito/img/logo/logo-generation-voyage.png">
+                                        <meta itemprop="width" content="1584">
+                                        <meta itemprop="height" content="410">
+                                    </span>
+                                </span>
+                                <meta itemprop="headline" content="Les 6 réalisations d&rsquo;architecture futuriste à ne pas manquer à Dubaï">
+                                <meta itemprop="description"
+                                      content="Embarquez pour un voyage extraordinaire à la découverte de l'architecture futuriste des plus grands monuments de Dubaï.">
+                                <span style="display: none;" itemprop="image" itemscope
+                                      itemtype="https://schema.org/ImageObject">
+                                    <meta itemprop="url" content="https://cdn.generationvoyage.fr/2024/01/architecture-futuriste-Dubai-755x503.jpeg">
+                                                                        <meta itemprop="width" content="755">
+                                    <meta itemprop="height" content="503">
+                                </span>
+                                <meta itemprop="datePublished" content="2024-02-08T12:37:24+02:00">
+                                <meta itemprop="dateModified"
+                                      content="2024-02-08T12:37:58+02:00">
+                                <script type="application/ld+json">
+                                    {
+                                        "@context": "http://schema.org",
+                                        "@type": "BreadcrumbList",
+                                        "itemListElement":
+                                        [
+                                                                                        {
+                                                        "@type": "ListItem",
+                                                        "position": 1,
+                                                        "item":
+                                                        {
+                                                            "@id": "https://generationvoyage.fr/visiter/",
+                                                            "name": "Toutes les destinations"
+                                                        }
+                                                    },
+                                                    {
+                                                        "@type": "ListItem",
+                                                        "position": 2,
+                                                        "item":
+                                                        {
+                                                            "@id": "https://generationvoyage.fr/visiter/emirats-arabes-unis/",
+                                                            "name": "Émirats arabes unis"
+                                                        }
+                                                    },
+                                                                                                        {
+                                                        "@type": "ListItem",
+                                                        "position": 3,
+                                                        "item":
+                                                        {
+                                                            "@id": "https://generationvoyage.fr/visiter/emirats-arabes-unis/dubai/",
+                                                            "name": "Dubaï"
+                                                        }
+                                                    },
+                                                    {
+                                                        "@type": "ListItem",
+                                                        "position": 4,
+                                                        "item":
+                                                        {
+                                                            "@id": "https://generationvoyage.fr/architecture-futuriste-dubai/",
+                                                            "name": "Les 6 réalisations d&rsquo;architecture futuriste à ne pas manquer à Dubaï"
+                                                        }
+                                                    }
+                                                                                        ]
+                                }
+                                </script>
+                            </footer>
+                        </div>
+                        <span class="main_block_bottom_title">Plus d'inspiration</span>
+                                                    <div class="widget-bas">
+                                <div id="widget-doyoo"
+                                     data-dyg-affi-id="GenVoy"
+                                     data-dyg-category="geoAddress"
+                                     data-dyg-type="articles-genvoy"
+                                     data-dyg-format="2"
+                                     data-dyg-custom-options='{}'
+                                     data-dyg-locale="fr"
+                                                                          data-dyg-currency-iso="EUR"
+                                                                          data-dyg-address="Dubaï,ae"
+                                     data-dyg-search="architecture"                                ></div>
+                            </div>
+                                                    <div class="clear"></div>
+                        <div class="main_block_bottom">
+                            <div class='yarpp yarpp-related yarpp-related-shortcode yarpp-template-yarpp-template-custom'>
+
+
+
+	        <div class="main-bottom">
+            <a href='https://generationvoyage.fr/city-pass-dubai/' title='City Pass Dubaï : avis, tarif, durée &amp; activités incluses' class="liensarticle article recommended_link_image">
+                <img width="285" height="190" src="https://cdn.generationvoyage.fr/2021/03/Burj-Khalifa-285x190.jpg" class="attachment-medium size-medium wp-post-image" alt="Burj Khalifa" decoding="async" loading="lazy" srcset="https://cdn.generationvoyage.fr/2021/03/Burj-Khalifa-285x190.jpg 285w, https://cdn.generationvoyage.fr/2021/03/Burj-Khalifa-630x420.jpg 630w, https://cdn.generationvoyage.fr/2021/03/Burj-Khalifa-768x512.jpg 768w, https://cdn.generationvoyage.fr/2021/03/Burj-Khalifa-755x504.jpg 755w, https://cdn.generationvoyage.fr/2021/03/Burj-Khalifa.jpg 2000w" sizes="(max-width: 285px) 100vw, 285px" />                <div>
+                                            <span class="tags">S'informer</span>
+                                        <span class="titleinner">City Pass Dubaï : avis, tarif, durée &amp; activités incluses</span>
+                </div>
+            </a>
+        </div>
+	        <div class="main-bottom">
+            <a href='https://generationvoyage.fr/visiter-parc-ferrari-world/' title='Visiter le parc Ferrari World d&rsquo;Abu Dhabi depuis Dubaï' class="liensarticle article recommended_link_image">
+                <img width="300" height="162" src="https://cdn.generationvoyage.fr/2014/10/ferrari-world-abu-dhabi-dubai-300x162.jpg" class="attachment-medium size-medium wp-post-image" alt="Ferrari World Abu Dhabi, Dubai" decoding="async" loading="lazy" srcset="https://cdn.generationvoyage.fr/2014/10/ferrari-world-abu-dhabi-dubai-300x162.jpg 300w, https://cdn.generationvoyage.fr/2014/10/ferrari-world-abu-dhabi-dubai-600x324.jpg 600w, https://cdn.generationvoyage.fr/2014/10/ferrari-world-abu-dhabi-dubai.jpg 2048w" sizes="(max-width: 300px) 100vw, 300px" />                <div>
+                                            <span class="tags">Se divertir</span>
+                                        <span class="titleinner">Visiter le parc Ferrari World d&rsquo;Abu Dhabi depuis Dubaï</span>
+                </div>
+            </a>
+        </div>
+	        <div class="main-bottom">
+            <a href='https://generationvoyage.fr/meilleurs-hotels-desert-dubai/' title='Les 7 meilleurs hôtels dans le désert de Dubaï' class="liensarticle article recommended_link_image">
+                <img width="285" height="190" src="https://cdn.generationvoyage.fr/2021/09/hotel-desert-dubai4-285x190.jpeg" class="attachment-medium size-medium wp-post-image" alt="Al Badayer Retreat" decoding="async" loading="lazy" srcset="https://cdn.generationvoyage.fr/2021/09/hotel-desert-dubai4-285x190.jpeg 285w, https://cdn.generationvoyage.fr/2021/09/hotel-desert-dubai4-630x420.jpeg 630w, https://cdn.generationvoyage.fr/2021/09/hotel-desert-dubai4-768x512.jpeg 768w, https://cdn.generationvoyage.fr/2021/09/hotel-desert-dubai4-755x503.jpeg 755w, https://cdn.generationvoyage.fr/2021/09/hotel-desert-dubai4.jpeg 2048w" sizes="(max-width: 285px) 100vw, 285px" />                <div>
+                                            <span class="tags">Se loger</span>
+                                        <span class="titleinner">Les 7 meilleurs hôtels dans le désert de Dubaï</span>
+                </div>
+            </a>
+        </div>
+	        <div class="main-bottom">
+            <a href='https://generationvoyage.fr/excursions-dubai/' title='10 excursions à la journée à faire depuis Dubaï' class="liensarticle article recommended_link_image">
+                <img width="292" height="190" src="https://cdn.generationvoyage.fr/2021/03/excursions-dubai-sharjah-292x190.jpg" class="attachment-medium size-medium wp-post-image" alt="Excursion depuis Dubaï à Sharjah" decoding="async" loading="lazy" srcset="https://cdn.generationvoyage.fr/2021/03/excursions-dubai-sharjah-292x190.jpg 292w, https://cdn.generationvoyage.fr/2021/03/excursions-dubai-sharjah-630x410.jpg 630w, https://cdn.generationvoyage.fr/2021/03/excursions-dubai-sharjah-768x499.jpg 768w, https://cdn.generationvoyage.fr/2021/03/excursions-dubai-sharjah-755x491.jpg 755w, https://cdn.generationvoyage.fr/2021/03/excursions-dubai-sharjah.jpg 2000w" sizes="(max-width: 292px) 100vw, 292px" />                <div>
+                                            <span class="tags">Se laisser guider</span>
+                                        <span class="titleinner">10 excursions à la journée à faire depuis Dubaï</span>
+                </div>
+            </a>
+        </div>
+	        <div class="main-bottom">
+            <a href='https://generationvoyage.fr/location-jet-ski-dubai/' title='Location de jet ski à Dubaï : comment faire et où ?' class="liensarticle article recommended_link_image">
+                <img width="287" height="190" src="https://cdn.generationvoyage.fr/2021/10/jetski-jumeira-287x190.jpg" class="attachment-medium size-medium wp-post-image" alt="Jet ski à Jumeira Beach" decoding="async" loading="lazy" srcset="https://cdn.generationvoyage.fr/2021/10/jetski-jumeira-287x190.jpg 287w, https://cdn.generationvoyage.fr/2021/10/jetski-jumeira-630x417.jpg 630w, https://cdn.generationvoyage.fr/2021/10/jetski-jumeira-768x508.jpg 768w, https://cdn.generationvoyage.fr/2021/10/jetski-jumeira-755x500.jpg 755w, https://cdn.generationvoyage.fr/2021/10/jetski-jumeira.jpg 2000w" sizes="(max-width: 287px) 100vw, 287px" />                <div>
+                                            <span class="tags">Se bouger</span>
+                                        <span class="titleinner">Location de jet ski à Dubaï : comment faire et où ?</span>
+                </div>
+            </a>
+        </div>
+	        <div class="main-bottom">
+            <a href='https://generationvoyage.fr/visiter-desert-dubai-quad-buggy/' title='Visiter le désert de Dubaï en quad ou en buggy' class="liensarticle article recommended_link_image">
+                <img width="286" height="190" src="https://cdn.generationvoyage.fr/2021/11/buggy-dans-le-desert-286x190.jpg" class="attachment-medium size-medium wp-post-image" alt="Buggy dans le désert de Dubaï" decoding="async" loading="lazy" srcset="https://cdn.generationvoyage.fr/2021/11/buggy-dans-le-desert-286x190.jpg 286w, https://cdn.generationvoyage.fr/2021/11/buggy-dans-le-desert-630x418.jpg 630w, https://cdn.generationvoyage.fr/2021/11/buggy-dans-le-desert-768x510.jpg 768w, https://cdn.generationvoyage.fr/2021/11/buggy-dans-le-desert-1536x1020.jpg 1536w, https://cdn.generationvoyage.fr/2021/11/buggy-dans-le-desert-755x501.jpg 755w, https://cdn.generationvoyage.fr/2021/11/buggy-dans-le-desert-1000x664.jpg 1000w, https://cdn.generationvoyage.fr/2021/11/buggy-dans-le-desert.jpg 2000w" sizes="(max-width: 286px) 100vw, 286px" />                <div>
+                                            <span class="tags">Se divertir</span>
+                                        <span class="titleinner">Visiter le désert de Dubaï en quad ou en buggy</span>
+                </div>
+            </a>
+        </div>
+	        <div class="main-bottom">
+            <a href='https://generationvoyage.fr/balades-bateau-dubai/' title='Les 10 meilleures balades en bateau à faire autour de Dubaï' class="liensarticle article recommended_link_image">
+                <img width="285" height="190" src="https://cdn.generationvoyage.fr/2021/11/yacht-dubai-285x190.jpg" class="attachment-medium size-medium wp-post-image" alt="Yacht à Dubaï" decoding="async" loading="lazy" srcset="https://cdn.generationvoyage.fr/2021/11/yacht-dubai-285x190.jpg 285w, https://cdn.generationvoyage.fr/2021/11/yacht-dubai-630x420.jpg 630w, https://cdn.generationvoyage.fr/2021/11/yacht-dubai-768x512.jpg 768w, https://cdn.generationvoyage.fr/2021/11/yacht-dubai-1536x1025.jpg 1536w, https://cdn.generationvoyage.fr/2021/11/yacht-dubai-755x504.jpg 755w, https://cdn.generationvoyage.fr/2021/11/yacht-dubai-1000x667.jpg 1000w, https://cdn.generationvoyage.fr/2021/11/yacht-dubai.jpg 2000w" sizes="(max-width: 285px) 100vw, 285px" />                <div>
+                                            <span class="tags">S'évader</span>
+                                        <span class="titleinner">Les 10 meilleures balades en bateau à faire autour de Dubaï</span>
+                </div>
+            </a>
+        </div>
+	        <div class="main-bottom">
+            <a href='https://generationvoyage.fr/appart-hotel-dubai/' title='Les 10 meilleurs appart&rsquo;hôtels à Dubai' class="liensarticle article recommended_link_image">
+                <img width="300" height="183" src="https://cdn.generationvoyage.fr/2023/07/appart-hotels-dubai-300x183.jpeg" class="attachment-medium size-medium wp-post-image" alt="Les meilleurs appart&#039;hôtels de Dubaï" decoding="async" loading="lazy" srcset="https://cdn.generationvoyage.fr/2023/07/appart-hotels-dubai-300x183.jpeg 300w, https://cdn.generationvoyage.fr/2023/07/appart-hotels-dubai-630x385.jpeg 630w, https://cdn.generationvoyage.fr/2023/07/appart-hotels-dubai-768x469.jpeg 768w, https://cdn.generationvoyage.fr/2023/07/appart-hotels-dubai-755x461.jpeg 755w, https://cdn.generationvoyage.fr/2023/07/appart-hotels-dubai-1000x611.jpeg 1000w, https://cdn.generationvoyage.fr/2023/07/appart-hotels-dubai.jpeg 1200w" sizes="(max-width: 300px) 100vw, 300px" />                <div>
+                                            <span class="tags">Se loger</span>
+                                        <span class="titleinner">Les 10 meilleurs appart&rsquo;hôtels à Dubai</span>
+                </div>
+            </a>
+        </div>
+	        <div class="main-bottom">
+            <a href='https://generationvoyage.fr/plages-dubai/' title='Les 10 plus belles plages où se baigner à Dubaï' class="liensarticle article recommended_link_image">
+                <img width="285" height="190" src="https://cdn.generationvoyage.fr/2021/10/plage-dubai-285x190.jpeg" class="attachment-medium size-medium wp-post-image" alt="Mer beach" decoding="async" loading="lazy" srcset="https://cdn.generationvoyage.fr/2021/10/plage-dubai-285x190.jpeg 285w, https://cdn.generationvoyage.fr/2021/10/plage-dubai-630x420.jpeg 630w, https://cdn.generationvoyage.fr/2021/10/plage-dubai-768x512.jpeg 768w, https://cdn.generationvoyage.fr/2021/10/plage-dubai-755x504.jpeg 755w, https://cdn.generationvoyage.fr/2021/10/plage-dubai.jpeg 2048w" sizes="(max-width: 285px) 100vw, 285px" />                <div>
+                                            <span class="tags">S'évader</span>
+                                        <span class="titleinner">Les 10 plus belles plages où se baigner à Dubaï</span>
+                </div>
+            </a>
+        </div>
+	        <div class="main-bottom">
+            <a href='https://generationvoyage.fr/meilleurs-restaurants-dubai/' title='Les 11 meilleurs restaurants où manger à Dubaï' class="liensarticle article recommended_link_image">
+                <img width="285" height="190" src="https://cdn.generationvoyage.fr/2021/10/pierchic-285x190.png" class="attachment-medium size-medium wp-post-image" alt="Pierchic" decoding="async" loading="lazy" srcset="https://cdn.generationvoyage.fr/2021/10/pierchic-285x190.png 285w, https://cdn.generationvoyage.fr/2021/10/pierchic-630x420.png 630w, https://cdn.generationvoyage.fr/2021/10/pierchic-768x512.png 768w, https://cdn.generationvoyage.fr/2021/10/pierchic-755x504.png 755w, https://cdn.generationvoyage.fr/2021/10/pierchic.png 2000w" sizes="(max-width: 285px) 100vw, 285px" />                <div>
+                                            <span class="tags">Se divertir</span>
+                                        <span class="titleinner">Les 11 meilleurs restaurants où manger à Dubaï</span>
+                </div>
+            </a>
+        </div>
+	        <div class="main-bottom">
+            <a href='https://generationvoyage.fr/meilleurs-hotels-luxe-dubai/' title='Les 12 meilleurs hôtels de luxe de Dubaï' class="liensarticle article recommended_link_image">
+                <img width="285" height="190" src="https://cdn.generationvoyage.fr/2021/09/hotel-dubai-luxe6-285x190.jpeg" class="attachment-medium size-medium wp-post-image" alt="Grosvenor House" decoding="async" loading="lazy" srcset="https://cdn.generationvoyage.fr/2021/09/hotel-dubai-luxe6-285x190.jpeg 285w, https://cdn.generationvoyage.fr/2021/09/hotel-dubai-luxe6-630x420.jpeg 630w, https://cdn.generationvoyage.fr/2021/09/hotel-dubai-luxe6-768x512.jpeg 768w, https://cdn.generationvoyage.fr/2021/09/hotel-dubai-luxe6-755x503.jpeg 755w, https://cdn.generationvoyage.fr/2021/09/hotel-dubai-luxe6.jpeg 1280w" sizes="(max-width: 285px) 100vw, 285px" />                <div>
+                                            <span class="tags">Se loger</span>
+                                        <span class="titleinner">Les 12 meilleurs hôtels de luxe de Dubaï</span>
+                </div>
+            </a>
+        </div>
+	        <div class="main-bottom">
+            <a href='https://generationvoyage.fr/location-bateau-dubai-itineraires/' title='Location de bateau à Dubaï : idées d’itinéraires' class="liensarticle article recommended_link_image">
+                <img width="284" height="190" src="https://cdn.generationvoyage.fr/2021/10/Dubai5-284x190.png" class="attachment-medium size-medium wp-post-image" alt="Yacht à Dubaï" decoding="async" loading="lazy" srcset="https://cdn.generationvoyage.fr/2021/10/Dubai5-284x190.png 284w, https://cdn.generationvoyage.fr/2021/10/Dubai5-630x421.png 630w, https://cdn.generationvoyage.fr/2021/10/Dubai5-768x513.png 768w, https://cdn.generationvoyage.fr/2021/10/Dubai5-755x504.png 755w, https://cdn.generationvoyage.fr/2021/10/Dubai5.png 2000w" sizes="(max-width: 284px) 100vw, 284px" />                <div>
+                                            <span class="tags">S'informer</span>
+                                        <span class="titleinner">Location de bateau à Dubaï : idées d’itinéraires</span>
+                </div>
+            </a>
+        </div>
+	        <div class="main-bottom">
+            <a href='https://generationvoyage.fr/transfert-aeroport-dubai-centre/' title='Transfert entre l’aéroport de Dubaï et le centre' class="liensarticle article recommended_link_image">
+                <img width="285" height="190" src="https://cdn.generationvoyage.fr/2021/11/taxi-prive-dubai-285x190.jpg" class="attachment-medium size-medium wp-post-image" alt="Taxi privé à Dubaï" decoding="async" loading="lazy" srcset="https://cdn.generationvoyage.fr/2021/11/taxi-prive-dubai-285x190.jpg 285w, https://cdn.generationvoyage.fr/2021/11/taxi-prive-dubai-630x420.jpg 630w, https://cdn.generationvoyage.fr/2021/11/taxi-prive-dubai-768x512.jpg 768w, https://cdn.generationvoyage.fr/2021/11/taxi-prive-dubai-1536x1025.jpg 1536w, https://cdn.generationvoyage.fr/2021/11/taxi-prive-dubai-755x504.jpg 755w, https://cdn.generationvoyage.fr/2021/11/taxi-prive-dubai-1000x667.jpg 1000w, https://cdn.generationvoyage.fr/2021/11/taxi-prive-dubai.jpg 2000w" sizes="(max-width: 285px) 100vw, 285px" />                <div>
+                                            <span class="tags">S'informer</span>
+                                        <span class="titleinner">Transfert entre l’aéroport de Dubaï et le centre</span>
+                </div>
+            </a>
+        </div>
+	        <div class="main-bottom">
+            <a href='https://generationvoyage.fr/exposition-universelle-dubai-aeroports/' title='Comment aller à l’Exposition Universelle de Dubaï depuis les aéroports ?' class="liensarticle article recommended_link_image">
+                <img width="285" height="190" src="https://cdn.generationvoyage.fr/2021/12/metro-dubai-285x190.jpg" class="attachment-medium size-medium wp-post-image" alt="Métro Dubaï" decoding="async" loading="lazy" srcset="https://cdn.generationvoyage.fr/2021/12/metro-dubai-285x190.jpg 285w, https://cdn.generationvoyage.fr/2021/12/metro-dubai-630x420.jpg 630w, https://cdn.generationvoyage.fr/2021/12/metro-dubai-768x512.jpg 768w, https://cdn.generationvoyage.fr/2021/12/metro-dubai-1536x1025.jpg 1536w, https://cdn.generationvoyage.fr/2021/12/metro-dubai-755x504.jpg 755w, https://cdn.generationvoyage.fr/2021/12/metro-dubai-1000x667.jpg 1000w, https://cdn.generationvoyage.fr/2021/12/metro-dubai.jpg 2000w" sizes="(max-width: 285px) 100vw, 285px" />                <div>
+                                            <span class="tags">S'informer</span>
+                                        <span class="titleinner">Comment aller à l’Exposition Universelle de Dubaï depuis les aéroports ?</span>
+                </div>
+            </a>
+        </div>
+</div>
+                            <div class="clear"></div>
+                        </div>
+                                                <div class="author_bloc">
+                            <img loading="lazy" src="https://generationvoyage.fr/wp-content/themes/toolito/img/bg-author.jpg.webp"
+                                 width="700px" height="400px" alt="cover background">
+                            <div class="content_bloc">
+                                            <img class="photo" loading="lazy" src="https://secure.gravatar.com/avatar/99a20c2439ffaf82cb9082b8a58c35ca?s=70&d=blank&r=g"  alt="avatar" width="70" height="70" />
+                                            <div class="content">
+                                    <div class="name">
+                                        <a href="https://generationvoyage.fr/author/delphine-f/" class="vcard author" rel="author"
+                                           itemprop="url">
+                                            <span class="fn"
+                                                  itemprop="name">Par Delphine Fleury</span>
+                                        </a>
+                                        <div class="listing-social">
+                                                                                            <a target="_blank" href="https://www.linkedin.com/in/delphine-fleury-editorial/" title="Linkedin">
+                                                    <svg height="16px" xmlns="http://www.w3.org/2000/svg"
+                                                         viewBox="0 0 448 512">
+                                                        <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/>
+                                                    </svg>
+                                                </a>
+                                                                                    </div>
+                                    </div>
+                                    <div class="description">
+                                        <div itemprop="description">
+                                            <p>Passionnée d’histoire, de food, d'opéra et de couchers de soleil, j'associe mon goût du voyage et de l'écriture. L’écrit est au cœur de mon parcours depuis plus de 15 ans, avec une expérience pointue en stratégie éditoriale.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="join">Generation Voyage grandit — <a title="Rejoins l’équipe"
+                                                                              href="https://partenaires.generationvoyage.fr/devenir-freelance-generation-voyage/"
+                                                                              target="_blank">Rejoins l’équipe</a></span>
+                        </div>
+
+                        <div class="comment-count">0 Commentaire(s)</div>
+                                 <div class="clear"></div>
+         	<div id="respond" class="comment-respond">
+		<span id="reply-title" class="h4 comment-reply-title">Laisser un commentaire <small><a rel="nofollow" id="cancel-comment-reply-link" href="/architecture-futuriste-dubai/#respond" style="display:none;">Annuler le commentaire</a></small></span><form action="https://generationvoyage.fr/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="input-form" id="respond-comment"><textarea name="comment" id="comment" cols="58" rows="10" tabindex="0" aria-required="true" placeholder="Votre commentaire..."></textarea></p><p class="input-form2 form-nom"><input placeholder="Nom" id="author"  name="author" type="text" value="" size="30" /></p>
+<p class="input-form2 form-mail"><input placeholder="Adresse mail" id="email" name="email" type="text" value="" size="30" /></p>
+<p class="input-form2 form-url"><input placeholder="Site web" id="url" name="url" type="text" value="" size="30" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Envoyer le commentaire" /> <input type='hidden' name='comment_post_ID' value='227909' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="984368be81" /></p><p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="68"/><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>	</div><!-- #respond -->
+	
+                    </div><!--END .tableflex1 -->
+                    <div class="tableflex2">
+    
+                            <div class="topresasidebar" id="topbooker">
+
+                                            <div id="div-ad-pave-haut" class="ads-core-placer"
+                             data-ads-core='{"device": "tablet, desktop", "type":"Pave-Haut"}'></div>
+                                    </div>
+                        <span id="limitscroll"></span>
+
+        
+    
+                    </div><!--END .containertableflex -->
+                <div class="clear"></div>
+            </div><!--END #main-content -->
+        </article>
+
+                    <section class="liste-pays-villes">
+                <div class="container-home">
+                    <h2 class="title-black">Votre voyage - Dubaï</h2>
+                    <ul class="content-villes">
+                                                    <li><a href="https://generationvoyage.fr/visiter-dubai-faire-voir/">Visiter Dubaï</a></li>
+                        
+
+                                                    <li><a href="https://generationvoyage.fr/loger-dubai/">Où dormir à Dubaï</a>
+                            </li>
+                        
+                        
+
+                                                    <li><a href="https://generationvoyage.fr/airbnb-dubai/">Airbnb Dubaï</a></li>
+                                            </ul>
+                </div>
+            </section>
+
+                            <section class="liste-pays-villes">
+                    <div class="container-home">
+                        <h2 class="title-black">Explorez les environs</h2>
+                        <ul class="content-villes">
+                                                            <li><a href="https://generationvoyage.fr/visiter/emirats-arabes-unis/abu-dhabi/">Abu Dhabi</a></li>
+                                                    </ul>
+                    </div>
+                </section>
+            
+
+            <div class="footer_new">
+    <div class="td-footer-bottom-full container-home">
+        <div class="">
+            <div class="td-pb-row">
+                <div class="">
+                    <aside class="footer-logo-wrap">
+                        <img loading="lazy" src="/wp-content/themes/toolito/img/logo/gv_213_color.svg" width="180" height="46" title="Generation Voyage Logo white" alt="Logo Generation Voyage" />
+                        <p>Depuis 2013, Generation Voyage fait découvrir des expériences mémorables et aide ses utilisateurs à les vivre.</p>
+                    </aside>
+                </div>
+                <div class="">
+                    <aside class="footer-text-wrap">
+                        <ul>
+                            <li><a href="/qui-sommes-nous/" title="Qui sommes nous ?" class="lien_menu_footer">Qui sommes nous ?</a></li>
+                            <li><a href="/recrutement/" target="_blank" title="Carrière" class="lien_menu_footer">Recrutement</a></li>
+                        </ul>
+                    </aside>
+                </div>
+                <div class="">
+                    <aside class="footer-text-wrap">
+                        <ul>
+                            <li><a href="/partenariats/" title="Publicité" class="lien_menu_footer">Partenariats/Publicité</a></li>
+                            <li><a href="/tableau-destination/" title="Baromètre des destinations" class="lien_menu_footer">Baromètre des destinations</a></li>
+                            <li><a href="/contact/" title="Contact" class="lien_menu_footer">Contact</a></li>
+                        </ul>
+                    </aside>
+                </div>
+                <div class="">
+                    <aside class="footer-social-wrap td-social-style-2">
+                        <div class="title-footer">
+                            <span>Suivez-nous sur les réseaux</span>
+                        </div>
+                        <span class="td-social-icon-wrap">
+                           <a href="https://www.instagram.com/generation_voyage/" title="Instagram" target="_blank">
+                               <img width="15" height="15" loading="lazy" src="https://generationvoyage.fr/wp-content/themes/toolito/img/instagram.svg" alt="Logo Instagram">
+                           </a>
+                        </span>
+                        <span class="td-social-icon-wrap">
+                            <a target="_blank" href="https://www.linkedin.com/company/generationvoyage/" title="Linkedin" >
+                                <img width="15" height="15" loading="lazy" src="https://generationvoyage.fr/wp-content/themes/toolito/img/linkedin.svg" alt="Logo Linkedin">
+                            </a>
+                        </span>
+                        <span class="td-social-icon-wrap">
+                            <a target="_blank" href="https://www.facebook.com/generationvoyage/" title="Facebook">
+                                <img width="9" height="17" loading="lazy" src="https://generationvoyage.fr/wp-content/themes/toolito/img/facebook.svg" alt="Logo Facebook">
+                            </a>
+                        </span>
+                        <span class="td-social-icon-wrap">
+                            <a target="_blank" href="https://www.pinterest.fr/generation_voyage/" title="Pinterest" >
+                                <img width="13" height="17" loading="lazy" src="https://generationvoyage.fr/wp-content/themes/toolito/img/pinterest.svg" alt="Logo Pinterest">
+                            </a>
+                        </span>
+                        <span class="td-social-icon-wrap">
+                            <a target="_blank" href="https://www.youtube.com/@generationvoyage" title="Youtube">
+                                <img width="19" height="15" loading="lazy" src="https://generationvoyage.fr/wp-content/themes/toolito/img/youtube-footer.svg" alt="Logo Youtube">
+                            </a>
+                        </span>
+
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+                
+
+
+        <div id="">
+            <div id="footer">
+                <div id="footer_text">
+                    <div class="footer_bottom_center">
+                        © 2013-2024 <strong class="load-more">Generation Voyage</strong> Tous droits réservés - <a href="/conditions-generales-utilisation/" class="underline">CGU</a> - <a href="/charte-de-confidentialite/" class="underline">Mentions légales</a> - Fait avec <span class="emoticon_rouge">❤</span> à Montpellier par <a class="underline" href="https://gctech.company" target="_blank">GC TECH</a>
+                         - v2.12.1                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </footer>
+        <link rel='stylesheet' id='yarppRelatedCss-css' href='https://generationvoyage.fr/wp-content/plugins/yet-another-related-posts-plugin/style/related.css?ver=5.30.10' type='text/css' media='all' />
+<script type="text/javascript" src="https://generationvoyage.fr/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-footer-js"></script>
+<script type="text/javascript" src="https://generationvoyage.fr/wp-includes/js/comment-reply.min.js?ver=6.6.1" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
+<script defer type="text/javascript" src="https://generationvoyage.fr/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1721140569" id="akismet-frontend-js"></script>
+            <script async src='https://generationvoyage.fr/wp-content/themes/toolito/dist/script-desktop.12d087891e8bdd4cdc8754bdfd8ad042.js'></script>
+        </div>
+        <div id="popupNewsletter" class="popupNewsletter d-none">
+<span id="closePopupNewsletter" class="closePopup close">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </span>
+            <div class="content">
+
+                <div>
+                    <img src="https://generationvoyage.fr/wp-content/themes/toolito/images/illustration-newsletter.jpg" loading="lazy" width="270px" height="488px" alt="Image newsletter popup - Génération Voyage">
+                </div>
+                <div class="text">
+                    <div class="title">
+                        Nos dernières inspirations et actualités voyage
+                    </div>
+                    <p class="description">
+                        Chaque jour, recevez un article d'inspiration voyage dans votre boîte mail
+                    </p>
+                    <form id="formPopupNewsletter" action="" x-on:submit.prevent="submit">
+                        <div class="input-form">
+                            <input id="emailPopupNewsletter" type="email" required placeholder="Mon adresse mail">
+                        </div>
+                        <div>
+                            <input type="submit" class="btn-primary" value="Je m'abonne, c'est gratuit">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    
+<script>
+    let ApiNonce = "b462a64b32";
+</script>
+
+
+<div x-data="Notifications" class="toastContainer" @setnotification.window="add($event.detail)">
+    <template x-for="notice of notices" :key="notice.id">
+        <div class="ToatsNotifications" :class="notice.type" x-show="notice.show" x-on:click="remove(notice.id)" x-transition>
+            <div class="d-flex align-items-center gap-10">
+                <span class="picto">
+                    <svg x-cloak x-show="notice.type === 'info'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="">
+                        <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                    </svg>
+                    <svg x-cloak x-show="notice.type === 'error'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z" clip-rule="evenodd" />
+                    </svg>
+                </span>
+                <span x-text="notice.text"></span>
+            </div>
+            <span class="closeNotificaton close" x-on:click="remove(notice.id)">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </span>
+        </div>
+    </template>
+</div>
+<div x-show="isLoginShow" x-cloak class="popupAccount loginPopup" x-data="loginPopup">
+    <div class="content" @click.outside="isLoginShow = false">
+        <span class="closePopup close" x-on:click="isLoginShow = false">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </span>
+        <img src="https://generationvoyage.fr/wp-content/themes/toolito/img/logo/logotype.png.webp" class="mx-auto" width="38" height="38" alt="Generation Voyage Logo">
+        <form action="" @submit.prevent="submitLogin()">
+            <span class="title">
+                Se connecter
+            </span>
+            
+            <div class="form-group">
+                <label for="">
+                    Email ou nom d’utilisateur                </label>
+                <input :class="{'error-border':error}" type="text" required x-model="email" placeholder="Email ou nom d’utilisateur">
+            </div>
+            <div class="form-group">
+                <label for="">
+                    Mot de passe                </label>
+                <input :class="{'error-border':error}" type="password" x-model="password" required placeholder="Mot de passe">
+                <a class="forgotPassword" href="#" x-on:click.prevent="isResetPasswordShow = true; isLoginShow = false">Mot de passe oublié ?</a>
+            </div>
+            <div class="form-group" x-show="error">
+                <p class="error-field" x-text="error"></p>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="signin btn-primary">
+                    <svg x-cloak x-show="loading" class="animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>Connexion
+                </button>
+            </div>
+            <p>
+                Pas encore de compte ? <a class="signup-redirect" href="#" x-on:click.prevent="isLoginShow = false; isRegisterShow = true;registerFrom = 'menu'">Créer un compte ici</a>
+            </p>
+        </form>
+    </div>
+</div>
+<div x-show="isSetNewPasswordShow" x-cloak  class="popupAccount setNewPasswordPopup" x-data="setNewPassword">
+    <div class="content" @click.outside="isSetNewPasswordShow = false">
+        <span class="closePopup" x-on:click="isSetNewPasswordShow = false">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </span>
+        <img src="https://generationvoyage.fr/wp-content/themes/toolito/img/logo/logotype.png.webp" class="mx-auto" width="38" height="38" alt="Generation Voyage Logo">
+        <form action="" @submit.prevent="submitNewPassword()">
+            <span class="title">
+                Réinitialiser votre mot de passe
+            </span>
+            <div class="form-group">
+                <label for="">
+                    Nouveau mot de passe                </label>
+                <input :class="{'error-border':error}" type="password" required x-model="password" placeholder="Mot de passe">
+            </div>
+            <div class="form-group">
+                <label for="">
+                    Confirmation du nouveau mot de passe                </label>
+                <input :class="{'error-border':error}" type="password" x-model="confirmPassword" required placeholder="Mot de passe">
+            </div>
+            <div class="form-group" x-show="error">
+                <p class="error-field" x-text="error"></p>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn-primary" value="Enregistrer">
+            </div>
+            <p>
+                <a href="#" x-on:click.prevent="isSetNewPasswordShow = false; isRegisterShow = true;registerFrom = 'menu'">Créer un compte</a> | <a href="#" x-on:click.prevent="isSetNewPasswordShow = false; isLoginShow = true">Se connecter</a>
+            </p>
+        </form>
+    </div>
+</div>
+<div x-show="isResetPasswordShow" x-cloak  class="popupAccount resetPasswordPopup" x-data="resetPassword">
+    <div class="content" @click.outside="isResetPasswordShow = false">
+        <span class="closePopup" x-on:click="isResetPasswordShow = false">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </span>
+        <img src="https://generationvoyage.fr/wp-content/themes/toolito/img/logo/logotype.png.webp" class="mx-auto" width="38" height="38" alt="Generation Voyage Logo">
+        <form action="" @submit.prevent="submitReset()">
+            <span class="title">
+                Réinitialiser votre mot de passe
+            </span>
+            <div class="form-group">
+                <label for="">
+                    E-mail                </label>
+                <input :class="{'error-border':error,'success-border':valid,'validated':valid}" type="text" required x-model="email" placeholder="E-mail">
+                <small :class="{'error-field':error,'success-field':valid}" x-show="message" x-text="message"></small>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn-primary" value="Réinitialiser">
+            </div>
+            <p>
+                <a href="#" x-on:click.prevent="isResetPasswordShow = false; isRegisterShow = true;registerFrom = 'menu'">Créer un compte</a> | <a href="#" x-on:click.prevent="isResetPasswordShow = false; isLoginShow = true">Se connecter</a>
+            </p>
+        </form>
+    </div>
+</div>
+<div x-show="isRegisterShow" x-cloak  class="popupAccount registerPopup" x-data="registerPopup">
+    <div class="content" @click.outside="isRegisterShow = false, closePopup()">
+        <span class="closePopup close" x-on:click="isRegisterShow = false">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </span>
+        <img src="https://generationvoyage.fr/wp-content/themes/toolito/img/logo/logotype.png.webp" class="mx-auto" width="38" height="38" alt="Generation Voyage Logo">
+        <form @submit.prevent="submitRegister()">
+            <template x-if="step1 === true">
+                <div  class="step1Register">
+                    <template x-if="pro">
+                        <span class="title">Créez un compte pro pour accéder aux données GenerationVoyage</span>
+                    </template>
+                    <template x-if="registerFrom === 'menu' && !pro">
+                        <span class="title">Créez un compte pour retrouver vos listes d'articles favoris</span>
+                    </template>
+                    <template x-if="registerFrom === 'bookmark'">
+                        <span class="title">
+                            Pour sauvegarder un article dans votre liste, créez un compte.
+                        </span>
+                    </template>
+                    <template x-if="registerFrom === 'votes'">
+                        <span class="title">
+                            Pour voter, créez un compte.
+                        </span>
+                    </template>
+                    <template x-if="!pro">
+                    <div class="form-group form-group-checkbox">
+                        <input type="checkbox" class="optin-newsletter" x-model="newsletter" id="newletterRegister">
+                        <label for="newletterRegister">
+                            Je veux recevoir par emails les meilleures expériences à vivre.
+                            Pas de spams promis.
+                        </label>
+                    </div>
+                    </template>
+                    <div class="form-group">
+                        <label for="">
+                            E-mail                        </label>
+                        <input :class="{'error-border':errorEmail, 'validated':emailValid}" type="email" x-model="email" placeholder="E-mail">
+                        <small class="error-field" x-text="errorEmail"></small>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn-primary signup-step-1" x-on:click.prevent="checkEmailExist()">
+                            <svg x-cloak x-show="loading" class="animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>Continuer
+                        </button>
+                    </div>
+                    <div>
+                        <p>
+                            Déjà un compte ? <a href="#" class="login-redirect" x-on:click.prevent="isLoginShow = true; isRegisterShow = false">Se connecter</a>
+                        </p>
+                    </div>
+                </div>
+            </template>
+            <template x-if="step2 === true">
+                <div class="step2Register">
+                    <span class="title">
+                        Choisissez un nom d’utilisateur et un mot de passe
+                    </span>
+                    <div class="form-group">
+                        <label for="">
+                            Nom d'utilisateur                        </label>
+                        <input :class="{'error-border':errorUsername, 'validated':usernameValid}" x-on:input.debounce="checkUserExist" type="text" x-model="username" required placeholder="Nom d'utilisateur">
+                        <small class="error-field" x-text="errorUsername"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="">
+                            Mot de passe                        </label>
+                        <input :class="{'error-border':errorPassword, 'validated':passwordValid}" type="password" minlength="8" x-model="password" required placeholder="Mot de passe">
+                    </div>
+                    <div class="form-group">
+                        <p>
+                            En cliquant sur Créer un compte, vous acceptez les <a target="_blank" href="https://generationvoyage.fr/conditions-generales-utilisation/">Conditions générales d'utilisation</a> et vous reconnaisez  avoir pris connaissance de la
+                            <a target="_blank" href="https://generationvoyage.fr/charte-de-confidentialite/">politique de confidentialité</a> de Generation Voyage.
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn-primary signup" value="Connexion">
+                            <svg x-cloak x-show="loading" class="animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>Créer un compte
+                        </button>
+                    </div>
+                    <a href="#" class="back" x-on:click.prevent="step1=true; step2=false">Retour</a>
+                </div>
+            </template>
+        </form>
+    </div>
+</div>
+
+    <script>
+        const autoLoadDuration = 3; //In Seconds
+        const eventList = ["keydown", "mousemove", "wheel", "touchmove", "touchstart", "touchend"];
+        const autoLoadTimeout = setTimeout(runScripts, autoLoadDuration * 1000);
+
+        eventList.forEach(function(event) {
+            window.addEventListener(event, triggerScripts, { passive: true })
+        });
+
+        function triggerScripts() {
+            runScripts();
+            clearTimeout(autoLoadTimeout);
+            eventList.forEach(function(event) {
+                window.removeEventListener(event, triggerScripts, { passive: true });
+            });
+        }
+
+        function runScripts() {
+            document.querySelectorAll("script[delay]").forEach(function(scriptTag) {
+                scriptTag.setAttribute("src", scriptTag.getAttribute("delay"));
+            });
+        }
+    </script>
+<link rel="stylesheet" href="https://generationvoyage.fr/wp-content/themes/toolito/dist/doyoogo.779c6073e211df4690a7ab1b2ad7d776.css?ver=1.0"><script type="text/javascript" delay="https://generationvoyage.fr/wp-content/themes/toolito/dist/doyoogo.4570c6896ed96d8749623dece1f5ad31.js?ver=1.0" async></script>
+<script  src="https://generationvoyage.fr/wp-content/themes/toolito/dist/app.ee4c332ec068ed8418de31d58c345cd1.js"></script>
+<script>
+    console.log(`
+
+                  .....
+             .:-----------:
+           .------:::::------
+          :----:         :---:
+         .----             .
+         :---:        .......
+         :----      -----------
+          ----:     .::::-----:
+           ----:         -----
+           .----:       -----
+             ----:     -----
+              ----:   ----:
+               :----:----.
+                .-------
+                 .-----
+                   .:.
+
+
+`)
+</script>
+<script>console.log("On recrute en dev, growth & produit : https://bit.ly/gctech-recrute")</script>
+
+
+</body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

@@ -1,0 +1,10 @@
+.hero{
+    background-image: url(https://as2.ftcdn.net/v2/jpg/01/90/10/03/1000_F_190100397_SbErftTx5aMHImgkpXrbGBykR2XylPJ3.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 300px ;
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    margin-bottom: 20px;
+}

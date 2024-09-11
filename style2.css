@@ -1,0 +1,10 @@
+.hero{
+    background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwallspic.com%2Ffr%2Fimage%2F128992-accessoire_de_mode-montre_de_poche-horloge-cuivre-encore_de_la_vie&psig=AOvVaw0aJu-MKEqccrqcnYtNhNM5&ust=1726129579074000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMCuz_u7uogDFQAAAAAdAAAAABAE);
+    background-size: cover;
+    background-position: center;
+    padding: 300px ;
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
